@@ -35,6 +35,7 @@
       "WebFetch(domain:*)"
     ],
     "deny": [
+      "Bash(git:push*)"
     ]
   },
   "env": {
