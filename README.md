@@ -5,9 +5,11 @@
 ## 含まれるファイル
 
 - `CLAUDE.md` - Claude Codeのグローバル指示設定
-- `docs/` - 調査・コマンド実行ガイドライン
+- `docs/` - ルールとガイドライン
   - `investigation.md` - 調査時のガイドライン
   - `commands.md` - コマンド実行ガイドライン
+- `commands/` - カスタムコマンド定義
+  - `commit.md` - Git コミット作成コマンド
 - `settings.json` - Claude Codeの設定ファイル
 
 ## 別のPCで設定を同期する方法
@@ -29,6 +31,7 @@ git fetch origin
 
 # 設定ファイルのみチェックアウト
 git checkout origin/main -- docs/
+git checkout origin/main -- commands/
 git checkout origin/main -- CLAUDE.md
 git checkout origin/main -- settings.json
 git checkout origin/main -- .gitignore
