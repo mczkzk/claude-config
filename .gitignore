@@ -4,9 +4,6 @@ ide/
 # Projects data
 projects/
 
-# Settings
-settings.json
-
 # Statsig cache
 statsig/
 
