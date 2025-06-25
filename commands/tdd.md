@@ -20,9 +20,8 @@ Confirms implementation plan and begins test-driven development process.
 
 ## Usage
 ```
-/tdd                    # Auto-detect plan from context
-/tdd feature-name       # Specify plan explicitly
-/tdd draft-feature-name # Explicit draft specification
+/tdd                    # Auto-detect plan from current draft/active plans
+/tdd feature-name       # Specify plan explicitly by name
 ```
 
 ## What it does
@@ -50,57 +49,27 @@ Confirms implementation plan and begins test-driven development process.
 ### 3. TDD Implementation Process
 
 #### ⚠️ CRITICAL: TEST-FIRST RULE
-**TESTS MUST COME FIRST - NO EXCEPTIONS**
-- **NEVER create implementation files before tests exist**
-- **NEVER write component/function code before test cases**
-- **ALWAYS start with test file creation**
-
-#### Core Principle
 **Tests are the specification. Without tests first, specifications are unclear.**
+- **NEVER create implementation files before tests exist**
+- **ALWAYS start with test file creation**
 
 #### Implementation Cycle (Strict Order)
 1. **🔴 RED**: Write test first to define specification, create minimal stub that fails
 2. **🟢 GREEN**: Write implementation to make tests pass
 3. **🔵 REFACTOR**: Improve code quality while keeping tests green
 
-#### Mandatory Order for RED Phase
-**Step-by-step RED phase execution:**
+#### RED Phase Process
 1. **Create test file FIRST** - Write comprehensive test cases
-2. **Create minimal stub SECOND** - Only enough to make tests compile but fail
+2. **Create minimal stub** - Only enough to make tests compile but fail
 3. **Run tests to confirm RED** - Tests must fail due to missing implementation
-4. **NEVER create full implementation during RED phase**
 
-- Update progress in both:
-  - TodoWrite tool (task completion)
-  - Plan document (checkbox updates in `todos/active/`)
-
-#### Proper RED Phase Requirements
-**CRITICAL**: RED phase must satisfy both conditions:
-1. **Test file executes without syntax/import errors** (test "runs")
-2. **Test case fails due to unmet specifications** (test "fails for the right reason")
-
-**Implementation strategy for RED**:
-- Create minimal stub/mock of component/function being tested
-- Write comprehensive test cases that verify expected behavior
-- Run tests to confirm they fail due to missing implementation, not syntax errors
-- Never proceed to GREEN until RED phase is properly established
-
-**RED Phase Validation Checklist**:
-- ✅ **Test file created BEFORE any implementation file**
+**Success Criteria:**
 - ✅ Test executes without compilation errors
-- ✅ Test fails due to missing implementation (not syntax issues)  
-- ✅ Error message clearly indicates what functionality is missing
-- ✅ Stub component renders but lacks required features
-- ❌ Test throws uncaught exceptions or compilation errors
-- ❌ Test passes when it should fail (false positive)
-- ❌ **Implementation file created before test file**
+- ✅ Test fails due to missing implementation (not syntax issues)
+- ❌ **Implementation file created before test file** ⚠️ MOST COMMON MISTAKE
 
-**Common RED Phase Anti-Patterns to Avoid**:
-- **Creating implementation files before tests** ⚠️ MOST COMMON MISTAKE
-- Writing tests that immediately pass (skipping RED phase)
-- Creating implementation alongside tests (not true TDD)
-- Tests failing due to syntax errors rather than missing functionality
-- Proceeding to GREEN when RED validation is incomplete
+**Progress Tracking:**
+- Update TodoWrite tool and plan document checkboxes after each step
 
 #### TDD Cycle Visual Indicators
 Each implementation step shows current phase:
