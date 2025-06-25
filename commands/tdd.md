@@ -85,6 +85,8 @@ Each implementation step shows current phase:
 3. **After refactoring**: Confirm tests still pass (no regression)
 4. **Never skip validation steps** - each phase must be verified with actual test execution
 
+**Test Commands**: Refer to project's `CLAUDE.md` for specific test execution commands
+
 ### 4. Continuous Progress Tracking
 - **Immediate TodoWrite updates**: Mark tasks as "completed" right after finishing each task
 - **Plan document checkbox sync**: Update `todos/active/YYYY-MM-DD-[name].md` checkboxes `[ ]` → `[x]` immediately after task completion
