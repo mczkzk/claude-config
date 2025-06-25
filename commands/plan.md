@@ -63,7 +63,7 @@ Analyzes specifications/requirements and creates a detailed implementation plan 
 - **Completed Phase**: `todos/completed/YYYY-MM-DD-[feature-name].md` - Archived completed plans
 - **Refinement**: Plan can be updated through iterative conversation or `/plan --update`
 - **Confirmation**: Automatically moved to `active/` when `/tdd` is executed
-- **Change Tracking**: All updates automatically logged with timestamps and reasons
+- **Change Tracking**: Updates to active plans automatically logged with timestamps and reasons (draft plans do not include change logs)
 
 ## Planning Workflow
 1. `/plan` creates initial draft plan
@@ -86,9 +86,9 @@ Analyzes specifications/requirements and creates a detailed implementation plan 
 ```
 
 ### What Plan Update Does
-1. **Identifies Target Plan**: Finds active or draft plan file
+1. **Identifies Target Plan**: Finds active plan file (draft plans are updated without change logging)
 2. **Change Analysis**: Analyzes impact of requested changes
-3. **Automatic Logging**: Adds timestamped change log entry
+3. **Automatic Logging**: Adds timestamped change log entry (active plans only)
 4. **Smart Updates**: Updates relevant sections while preserving completed work
 5. **Task Adjustment**: Modifies task lists, adds new tasks, marks obsolete tasks
 6. **Progress Preservation**: Maintains existing checkbox states and completion status
