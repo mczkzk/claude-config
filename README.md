@@ -10,6 +10,8 @@
   - `commands.md` - コマンド実行ガイドライン
 - `commands/` - カスタムコマンド定義
   - `commit.md` - Git コミット作成コマンド
+  - `plan.md` - 実装計画作成コマンド
+  - `tdd.md` - テスト駆動開発コマンド
 - `settings.json` - Claude Codeの設定ファイル
 
 ## 別のPCで設定を同期する方法
