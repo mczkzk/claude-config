@@ -1,10 +1,10 @@
-# Claude Code グローバルのユーザー設定
+# Claude Code のユーザー設定
 
-このリポジトリは、Claude Codeのグローバル設定とドキュメントを管理するためのものです。
+このリポジトリは、Claude Code のユーザー設定とドキュメントを管理するためのものです。
 
 ## 含まれるファイル
 
-- `CLAUDE.md` - Claude Codeのグローバル指示設定
+- `CLAUDE.md` - Claude Code のユーザー指示設定
 - `docs/` - ルールとガイドライン
   - `investigation.md` - 調査時のガイドライン
   - `commands.md` - コマンド実行ガイドライン
