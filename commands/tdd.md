@@ -16,7 +16,7 @@ allowed-tools:
 
 # Test-Driven Development Command
 
-Executes **structured implementation** using test-driven development process. See CLAUDE.md for structured vs. ad-hoc development guidelines.
+Executes test-driven development process for plans created by /plan command.
 
 ## Usage
 
@@ -34,8 +34,7 @@ Executes **structured implementation** using test-driven development process. Se
 - Progress tracking and task completion
 
 **This command does NOT handle**:
-- Ad-hoc development (use regular workflow + TodoWrite)
-- Simple bug fixes (direct implementation)
+- Direct implementation without plans (use regular workflow + TodoWrite)
 - Planning phase (use `/plan` command)
 
 ## Implementation Process
@@ -115,18 +114,6 @@ Executes **structured implementation** using test-driven development process. Se
 - Mark all relevant checkboxes as complete
 - Notify user of implementation completion
 - Plan file remains in `todos/` for user review and manual archiving
-
-## Integration Notes
-
-### With /plan Command
-- Seamless continuation from planning to implementation
-- Maintains plan structure and TDD design
-- Preserves TodoWrite tool state
-
-### With Regular Development
-- Coexists with ad-hoc TodoWrite tasks
-- No interference with simple fixes and changes
-- Focuses on structured implementation only
 
 ## Key Principles
 

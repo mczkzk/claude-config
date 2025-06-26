@@ -11,7 +11,7 @@ allowed-tools:
 
 # Implementation Planning Command
 
-Creates detailed implementation plans for **structured development** of new features and complex changes. See CLAUDE.md for when to use structured vs. ad-hoc development workflows.
+Creates detailed implementation plans when you want to plan systematically before implementation.
 
 ## Usage
 
@@ -99,17 +99,6 @@ Completed Plans:
 • todos/completed/2025-06-18-auth-system.md (completed 1 week ago) - Authentication overhaul
 ```
 
-## Integration with Development Workflow
-
-### With /tdd Command
-- Seamless handoff from planning to implementation
-- Plan files remain in same location during implementation
-- Progress tracked through checkbox completion
-
-### With Regular Development
-- Coexists with ad-hoc TodoWrite tasks
-- No interference with simple fixes and changes
-- Clear separation of structured vs. immediate work
 
 ## Supported Input Formats
 
@@ -121,7 +110,7 @@ Completed Plans:
 ## Key Principles
 
 - **Planning Focus**: This command only creates plans, does not implement
-- **Structured Development**: Use for complex, multi-component features
+- **Systematic Planning**: Use when you want structured approach to development
 - **Natural Conversation**: Extract requirements from discussion context
 - **TDD Integration**: Plans designed for test-driven development workflow
 - **Simple Management**: One file per plan, minimal state tracking
