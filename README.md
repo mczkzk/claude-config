@@ -6,7 +6,7 @@ This repository manages user configuration and documentation for Claude Code.
 
 - `CLAUDE.md` - Claude Code user instruction settings
 - `docs/` - Rules and guidelines
-  - `investigation.md` - Investigation guidelines
+  - `behavioral-control.md` - Behavioral control guidelines (investigation & implementation)
   - `commands.md` - Command execution guidelines
   - `continuous-learning.md` - Continuous learning & documentation guidelines
 - `commands/` - Custom command definitions
