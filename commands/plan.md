@@ -38,10 +38,11 @@ Analyzes specifications/requirements and creates a detailed implementation plan 
    - Check architecture consistency requirements
 
 3. **Implementation Design**
-   - Break down features into implementable tasks
+   - Design comprehensive test cases first (TDD approach)
+   - Break down features into testable units
    - Define component hierarchy and data flow
    - Specify API endpoints and database changes needed
-   - Identify testing requirements
+   - Structure tasks in Test → Implementation → Refactor cycles
 
 4. **Plan Document Creation & Management**
    - Creates `todos/draft/YYYY-MM-DD-[feature-name].md` file
@@ -53,8 +54,8 @@ Analyzes specifications/requirements and creates a detailed implementation plan 
 ## Output Format
 - **Requirements Summary**: Structured list of what needs to be built
 - **Architecture Impact**: How this fits into existing codebase
-- **Implementation Plan**: Step-by-step development tasks with checkboxes
-- **Testing Strategy**: Unit, integration, and E2E test requirements
+- **Testing Strategy**: Test cases and TDD cycles (written first)
+- **Implementation Plan**: Step-by-step TDD development tasks with checkboxes
 - **Risk Assessment**: Potential challenges and mitigation strategies
 
 ## File Management
