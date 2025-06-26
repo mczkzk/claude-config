@@ -9,3 +9,7 @@ See @docs/investigation.md for Investigation Guidelines
 ## Command Execution Guidelines
 
 See @docs/commands.md for Command Execution Guidelines
+
+## Plan Management Guidelines
+
+See @docs/plan-management.md for Plan Management Guidelines
