@@ -102,6 +102,12 @@ Executes test-driven development process for plans created by /plan command.
 - Update plan document checkboxes `[ ]` → `[x]` immediately after task completion
 - Run lint/typecheck after major changes
 
+**Test Command Documentation**:
+- When discovering complex test commands during TDD cycles, document them in the plan file
+- Simple commands like `npm run test` don't need documentation
+- Complex commands with filters/options should be recorded for future reference
+- Example: `npm run test --filter="{testFile1|testFile2}"` → add to plan's command section
+
 **Progress Indicators**:
 - 🔴 **RED Phase** → "🔴 Creating failing test for [feature]..."
 - 🟢 **GREEN Phase** → "🟢 Implementing [feature] to pass test..."
