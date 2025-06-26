@@ -71,12 +71,7 @@ Executes **structured implementation** using test-driven development process. Se
 - **Test-First**: Write test logic BEFORE implementation logic
 - **Start Simple**: Begin with the simplest test case possible
 - **Minimal Change**: Write only enough code to pass the current test
-- **Triangulation**: Add different scenarios to verify code robustness
-
-**Mandatory test verification**:
-- RED: Test fails as expected
-- GREEN: All tests pass
-- REFACTOR: Tests still pass after refactoring
+- **Triangulation (optional)**: When implementation seems hardcoded, add more test cases to force generalization
 
 **Example flow**:
 ```
