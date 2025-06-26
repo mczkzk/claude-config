@@ -40,44 +40,68 @@ Executes **structured implementation** using test-driven development process. Se
 
 ## Implementation Process
 
-### 1. Plan Detection & Confirmation
+### Plan Detection & Confirmation
 
 **Auto-detection priority**:
 1. Plans updated in current session
 2. Plans matching current conversation context
 3. Manual selection from existing plans
 
+**File scanning**: Scan `todos/YYYY-MM-DD-*.md` files, exclude `todos/completed/`
+
 **Smart confirmation**:
 - Single clear candidate: "Implement [plan-name]? [Y/n]" → **WAIT for explicit user response**
 - Multiple candidates: Present numbered selection → **WAIT for user selection**
 - **CRITICAL**: Never proceed without explicit user confirmation
 
-### 2. TDD Implementation Cycle
+**Example**:
+```
+/tdd
+→ "todos/2025-06-25-payment-system.md was updated this session. Implement? [Y/n]"
+→ User: "Y" 
+→ "Starting TDD implementation..."
+```
 
-#### ⚠️ CRITICAL: TEST-FIRST RULE
-**Tests are the specification. Without tests first, specifications are unclear.**
-- **NEVER create implementation files before tests exist**
-- **ALWAYS start with test file creation**
-
-#### Implementation Cycle (Strict Order)
-1. **🔴 RED**: Write test first to define specification, create minimal stub that fails
-2. **🟢 GREEN**: Write implementation to make tests pass
+### TDD Implementation Cycle
+1. **🔴 RED**: Write test + create minimal failing implementation (intentionally wrong)
+2. **🟢 GREEN**: Fix implementation to make tests pass (minimal change)
 3. **🔵 REFACTOR**: Improve code quality while keeping tests green
 
-#### Mandatory Test Execution Pattern
-**EVERY TDD cycle MUST include these test runs**:
-1. **After creating stub + test**: Confirm RED (test fails due to missing implementation)
-2. **After initial implementation**: Confirm GREEN (all tests pass)  
-3. **After refactoring**: Confirm tests still pass (no regression)
+**Key Principles**:
+- **Test-First**: Write test logic BEFORE implementation logic
+- **Start Simple**: Begin with the simplest test case possible
+- **Minimal Change**: Write only enough code to pass the current test
+- **Triangulation**: Add different scenarios to verify code robustness
 
-### 3. Plan Updates During Implementation
+**Mandatory test verification**:
+- RED: Test fails as expected
+- GREEN: All tests pass
+- REFACTOR: Tests still pass after refactoring
+
+**Example flow**:
+```
+→ "🔴 Writing test + minimal failing implementation..."
+   ✅ Test written: expect('1') for input 1
+   ✅ Failing implementation: return $num; (returns int, not string)
+   ✅ Test fails as expected (correct RED)
+→ "🟢 Fixing implementation to pass test..."
+   ✅ Fixed: return (string)$num; (correct GREEN)
+→ "🔴 Adding triangulation test for different input..."
+   ✅ New test case fails (correct RED)
+→ "🟢 Generalizing implementation to handle multiple cases..."
+   ✅ All tests pass (correct GREEN)
+→ "🔵 Refactoring for better design..."
+   ✅ Tests still pass after refactoring
+```
+
+### Plan Updates During Implementation
 
 **When implementation reveals plan changes needed**:
 - User mentions: "Add mobile support to the plan", "Database optimization needed"
 - Update plan content as needed
 - Continue implementation with updated plan
 
-### 4. Progress Tracking
+### Progress Tracking
 
 **Immediate Updates**:
 - Mark TodoWrite tasks as "completed" right after finishing each task
@@ -85,75 +109,17 @@ Executes **structured implementation** using test-driven development process. Se
 - Run lint/typecheck after major changes
 
 **Progress Indicators**:
-- 📋 **Planning** → "📋 Setting up [task]..."
 - 🔴 **RED Phase** → "🔴 Creating failing test for [feature]..."
 - 🟢 **GREEN Phase** → "🟢 Implementing [feature] to pass test..."
 - 🔵 **REFACTOR Phase** → "🔵 Refactoring [component] for better design..."
-- 🧪 **Testing** → "🧪 Running test suite..."
 - ✅ **Completed** → "✅ [Feature] implementation complete"
 
-### 5. Implementation Completion
+### Implementation Completion
 
 **When all implementation tasks are completed**:
 - Mark all relevant checkboxes as complete
 - Notify user of implementation completion
 - Plan file remains in `todos/` for user review and manual archiving
-
-## Plan Detection Logic
-
-### File Scanning
-- Scan `todos/YYYY-MM-DD-*.md` files
-- Exclude `todos/completed/` directory
-- Prioritize files modified in current session
-
-### Context Matching
-- Files modified during current conversation session
-- Topics mentioned in recent messages
-- Explicit references to feature names
-
-### Fallback Behavior
-- **Never auto-execute without explicit user confirmation** 
-- Always ask "Which plan?" when multiple candidates exist
-- **If user doesn't respond**: Stop and wait, do not assume consent
-
-## Examples
-
-### Clear Context
-```
-/tdd
-→ "todos/2025-06-25-payment-system.md was updated this session. Implement? [Y/n]"
-→ **WAIT FOR USER INPUT** 
-→ User: "Y" 
-→ "Starting TDD implementation..."
-```
-
-### Multiple Options
-```
-/tdd  
-→ "Multiple plans found:
-   1. todos/2025-06-24-search-filter.md (updated today) ⭐️
-   2. todos/2025-06-25-payment-system.md (3 days ago)
-   Which would you like to implement?"
-→ **WAIT FOR USER SELECTION**
-→ User: "1"
-→ "Starting search-filter implementation..."
-```
-
-### Implementation Flow with Changes
-```
-/tdd search-filter
-→ User: "Y"
-→ "🔴 Creating failing test for SkillFilter..."
-   ✅ Tests fail due to missing implementation (correct RED)
-→ "🟢 Implementing SkillFilter to make tests pass..."
-   ✅ All tests pass (correct GREEN)
-→ User: "Add mobile support to the plan"
-→ "Updating plan with mobile support..."
-   ✅ Plan updated
-→ "🔵 Refactoring SkillFilter for mobile compatibility..."
-   ✅ Tests still pass after refactoring
-→ "✅ Task completed, moving to next phase..."
-```
 
 ## Integration Notes
 
@@ -167,15 +133,9 @@ Executes **structured implementation** using test-driven development process. Se
 - No interference with simple fixes and changes
 - Focuses on structured implementation only
 
-### With Existing Codebase
-- Respects existing code patterns and architecture
-- Follows repository testing guidelines
-- Integrates with project-specific test commands
-
 ## Key Principles
 
 - **Test-First Development**: Always write tests before implementation
-- **Implementation Focus**: Manages execution, not planning
-- **Simple Updates**: Plan changes integrated naturally
-- **Progress Transparency**: Clear status reporting throughout process
+- **Minimal Implementation**: Write only enough code to pass the current test
+- **Incremental Development**: Start simple, add complexity gradually through triangulation
 - **User Confirmation**: Never proceeds without explicit consent
