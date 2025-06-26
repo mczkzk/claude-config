@@ -31,7 +31,10 @@ git remote add origin https://github.com/mczkzk/claude-config.git
 # リモートから取得
 git fetch origin
 
-# 設定ファイルのみチェックアウト
+# ローカルブランチを作成してリモートのmainブランチを追跡
+git checkout -b main origin/main
+
+# 必要に応じて個別にチェックアウト
 git checkout origin/main -- docs/
 git checkout origin/main -- commands/
 git checkout origin/main -- CLAUDE.md
