@@ -16,10 +16,10 @@ Analyzes specifications/requirements and creates a detailed implementation plan 
 ## Usage
 ```
 /plan
-[specifications, requirements, mockups, or feature descriptions]
+# No arguments → Analyzes recent conversation history to create implementation plan
 
-/plan --update [feature-name]
-[changes, new requirements, or modifications to existing plan]
+/plan [specifications, requirements, mockups, or feature descriptions]
+# With arguments → Creates plan directly from provided specifications
 
 /plan --list
 # Shows all existing draft and active plans
@@ -27,25 +27,40 @@ Analyzes specifications/requirements and creates a detailed implementation plan 
 
 ## What it does
 
-1. **Requirement Analysis**
+### When used without arguments (`/plan`)
+1. **Conversation History Analysis**
+   - Analyzes entire conversation session from beginning
+   - Extracts requirements from user discussions, images, and context
+   - Identifies technical specifications and user intent
+   - Auto-generates appropriate feature name from conversation content
+
+2. **Context Integration**
+   - Consolidates scattered requirements into structured specifications
+   - Identifies contradictions and unclear points
+   - Lists additional questions that may need clarification
+
+### When used with arguments (`/plan [specifications]`)
+1. **Direct Requirement Analysis**
    - Parse and structure the provided specifications
    - Identify core features and user stories
    - Extract technical requirements and constraints
 
-2. **Codebase Investigation**
+### Common Steps for Both Modes
+3. **Codebase Investigation**
    - Search for related existing code patterns
    - Identify reusable components and services
    - Check architecture consistency requirements
 
-3. **Implementation Design**
+4. **Implementation Design**
    - Design comprehensive test cases first (TDD approach)
    - Break down features into testable units
    - Define component hierarchy and data flow
    - Specify API endpoints and database changes needed
    - Structure tasks in Test → Implementation → Refactor cycles
 
-4. **Plan Document Creation & Management**
+5. **Plan Document Creation & Management**
    - Creates `todos/draft/YYYY-MM-DD-[feature-name].md` file
+   - Feature name auto-generated from conversation context (when no arguments) or user-specified
    - Includes detailed implementation tasks
    - Can be iteratively refined through discussion
    - Auto-confirmed when `/tdd` command is executed (moves to `todos/active/`)
@@ -62,37 +77,52 @@ Analyzes specifications/requirements and creates a detailed implementation plan 
 - **Draft Phase**: `todos/draft/YYYY-MM-DD-[feature-name].md` - Plan under discussion
 - **Active Phase**: `todos/active/YYYY-MM-DD-[feature-name].md` - Confirmed plan during implementation
 - **Completed Phase**: `todos/completed/YYYY-MM-DD-[feature-name].md` - Archived completed plans
-- **Refinement**: Plan can be updated through iterative conversation or `/plan --update`
+- **Refinement**: Plan can be updated through natural conversation (e.g., "Update the plan to include bulk operations")
 - **Confirmation**: Automatically moved to `active/` when `/tdd` is executed
-- **Change Tracking**: Updates to active plans automatically logged with timestamps and reasons (draft plans do not include change logs)
+- **Change Tracking**: 
+  - **Draft Phase**: Direct content updates without change logs (in-place editing)
+  - **Active Phase**: All updates automatically logged with timestamps and reasons
 
 ## Planning Workflow
-1. `/plan` creates initial draft plan
+
+### Conversation-Based Planning
+1. Have natural conversation about requirements, features, or show screenshots/mockups
+2. `/plan` (no arguments) → Analyzes conversation and creates initial draft plan
+3. Discuss and refine plan through conversation
+4. `/tdd` confirms plan and begins implementation
+5. Progress tracked through TodoWrite tool and plan document updates
+6. **Implementation adjustments**: Natural conversation for mid-implementation changes ("Add bulk operation support to the plan")
+
+### Direct Specification Planning
+1. `/plan [detailed specifications]` creates initial draft plan
 2. Discuss and refine plan through conversation
 3. `/tdd` confirms plan and begins implementation
 4. Progress tracked through TodoWrite tool and plan document updates
-5. **Implementation adjustments**: `/plan --update [feature-name]` for mid-implementation changes
+5. **Implementation adjustments**: Natural conversation for mid-implementation changes ("The plan needs database optimization")
+
+### Common Steps
 6. **Plan history**: All changes logged with automatic change tracking
 
-## Plan Update Command (`/plan --update`)
+## Plan Updates via Natural Conversation
 
-### Usage
+### Usage Examples
 ```
-/plan --update feature-name
-[Describe changes needed]
-- Found issue with database schema
-- Need to add bulk operations
-- Performance requirements changed
-- New UI requirements from feedback
+"Update the plan to include bulk operations"
+"The plan needs database optimization due to performance issues"
+"Add mobile support to the current plan"
+"Remove the complex authentication - we'll use simple login instead"
 ```
 
-### What Plan Update Does
-1. **Identifies Target Plan**: Finds active plan file (draft plans are updated without change logging)
-2. **Change Analysis**: Analyzes impact of requested changes
-3. **Automatic Logging**: Adds timestamped change log entry (active plans only)
-4. **Smart Updates**: Updates relevant sections while preserving completed work
-5. **Task Adjustment**: Modifies task lists, adds new tasks, marks obsolete tasks
-6. **Progress Preservation**: Maintains existing checkbox states and completion status
+### How Plan Updates Work
+1. **Detects Update Intent**: Recognizes when conversation indicates plan changes needed
+2. **Identifies Target Plan**: Finds active or draft plan file automatically
+3. **Change Analysis**: Analyzes impact of requested changes from conversation context
+4. **Update Method**:
+   - **Draft Plans**: Direct in-place content updates (no change log)
+   - **Active Plans**: Content updates + automatic timestamped change log entry
+5. **Smart Updates**: Updates relevant sections while preserving completed work
+6. **Task Adjustment**: Modifies task lists, adds new tasks, marks obsolete tasks
+7. **Progress Preservation**: Maintains existing checkbox states and completion status (active plans only)
 
 ### Change Log Format
 ```markdown
@@ -140,6 +170,9 @@ Completed Plans:
 - This command does NOT implement code - only creates and manages plans
 - Plans are saved as persistent files for tracking across sessions
 - Use `/tdd` command to confirm plan and begin test-driven implementation
-- Supports various input formats: Slack text, JIRA screenshots, informal requirements
-- Change tracking maintains full history of plan evolution
+- **Conversation Mode**: `/plan` without arguments analyzes recent conversation history automatically
+- **Direct Mode**: `/plan [specs]` with arguments creates plan from provided specifications
+- Supports various input formats: Slack text, JIRA screenshots, informal requirements, conversation context
+- **Natural Updates**: Simply mention changes needed in conversation - no special commands required
+- Change tracking maintains full history of plan evolution with automatic logging
 - Progress preservation ensures completed work is never lost during updates
