@@ -8,6 +8,7 @@ This repository manages user configuration and documentation for Claude Code.
 - `docs/` - Rules and guidelines
   - `investigation.md` - Investigation guidelines
   - `commands.md` - Command execution guidelines
+  - `continuous-learning.md` - Continuous learning & documentation guidelines
 - `commands/` - Custom command definitions
   - `commit.md` - Git commit creation command
   - `plan.md` - Implementation plan creation command
