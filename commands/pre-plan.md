@@ -84,13 +84,13 @@ Guide user through checklist completion:
 ## 📝 Investigation Notes
 
 ### Findings
-*Record key discoveries during investigation*
+*Record key discoveries during investigation - BE DETAILED. Include specific technical details, version numbers, performance metrics, constraints discovered through testing or conversation. This preserves context that may be lost due to token limits.*
 
 ### Decisions
-*Document important architectural or design decisions made*
+*Document important architectural or design decisions made - BE SPECIFIC. Include rationale, alternatives considered, and technical justification. Record the "why" behind each decision to preserve reasoning for future reference.*
 
 ### Questions
-*List unresolved questions that need clarification*
+*List unresolved questions that need clarification - PROVIDE CONTEXT. Include background information and why each question matters for implementation success.*
 
 ---
 

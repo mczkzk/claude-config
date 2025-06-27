@@ -102,7 +102,7 @@ Creates detailed implementation plans from completed pre-plan investigations.
 *Document complex commands (not basic ones like npm test)*
 
 ## Implementation Notes
-*Record discoveries, decisions, and important findings during implementation*
+*Record discoveries, decisions, and important findings during implementation - BE COMPREHENSIVE. Include specific technical details, code snippets, command outputs, error messages, and solutions. Document the complete context to preserve knowledge across sessions and token limits.*
 ```
 
 ## Key Principles

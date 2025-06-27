@@ -43,15 +43,22 @@ Simply add new tasks to existing phases:
 ```
 
 ### Implementation Notes Format
-Document discoveries in plan documents:
+Document discoveries in plan documents - BE COMPREHENSIVE AND DETAILED:
 
 ```markdown
 ## Implementation Notes
 
 ### 2025-06-27 - API Integration
 - **Discovery**: External API returns different structure than documented
+  - Expected: `{user: {id, name, email}}`
+  - Actual: `{data: {user_id, full_name, email_address, created_at}}`
+  - API version: v2.1.3, affects all user endpoints
+- **Root Cause**: Documentation outdated, confirmed via support ticket #12345
 - **Solution**: Added transformation layer in `src/utils/api-transform.js`
-- **Command**: `npm run test:api -- --verbose` (for debugging)
+  - Maps field names: user_id → id, full_name → name, etc.
+  - Handles both old and new formats for backward compatibility
+- **Testing**: `npm run test:api -- --verbose` shows all 47 test cases passing
+- **Performance**: Transformation adds ~2ms overhead, acceptable for non-critical path
 ```
 
 ### Commands Reference Format
