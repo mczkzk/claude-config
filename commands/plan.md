@@ -42,9 +42,10 @@ Creates detailed implementation plans when you want to plan systematically befor
 ### Planning Process
 1. **Codebase Investigation**: Searches for existing patterns and reusable components
 2. **Architecture Analysis**: Ensures consistency with existing codebase
-3. **TDD Design**: Creates comprehensive test cases first
-4. **Task Breakdown**: Structures implementation in Test → Code → Refactor cycles
-5. **Plan Document Creation**: Generates detailed markdown plan files
+3. **Database Design Review**: Apply @docs/database-design.md principles - investigate existing schema, validate external data structures, and plan migrations carefully
+4. **TDD-Based Planning**: Creates plans following @docs/methodology.md TDD and refactoring standards
+5. **Task Breakdown**: Structures implementation in Test → Code → Refactor cycles
+6. **Plan Document Creation**: Generates detailed markdown plan files
 
 ## Planning Workflow
 
@@ -113,5 +114,4 @@ Completed Plans:
 - **Planning Focus**: This command only creates plans, does not implement
 - **Systematic Planning**: Use when you want structured approach to development
 - **Natural Conversation**: Extract requirements from discussion context
-- **TDD-Based Planning**: Creates plans following @docs/methodology.md TDD and refactoring standards
 - **Simple Management**: One file per plan, minimal state tracking

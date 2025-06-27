@@ -9,6 +9,7 @@ This repository manages user configuration and documentation for Claude Code.
   - `behavioral-control.md` - Behavioral control guidelines (Normal mode only)
   - `commands.md` - Command execution guidelines
   - `continuous-learning.md` - Continuous learning & documentation guidelines
+  - `database-design.md` - Database design and migration management guidelines
   - `date.md` - Date management standards for documentation
   - `methodology.md` - Programming methodology standards (TDD, refactoring)
 - `commands/` - Custom command definitions
