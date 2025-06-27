@@ -3,7 +3,7 @@
 ## Basic Responses
 - `y` - YES (approve/execute)
 - `n` - NO (reject/stop)
-- `u` - undo
+- `u` - undo last Claude Code action/change
 
 ## Usage Examples
 ```
@@ -13,7 +13,7 @@ User: y
 Claude: Should I delete this file?
 User: n
 
-Claude: Changes have been committed
+Claude: I've edited the file to add the new function
 User: u
 ```
 
