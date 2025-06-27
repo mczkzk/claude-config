@@ -113,5 +113,5 @@ Completed Plans:
 - **Planning Focus**: This command only creates plans, does not implement
 - **Systematic Planning**: Use when you want structured approach to development
 - **Natural Conversation**: Extract requirements from discussion context
-- **TDD Integration**: Plans designed for test-driven development workflow
+- **TDD-Based Planning**: Creates plans following @docs/methodology.md TDD and refactoring standards
 - **Simple Management**: One file per plan, minimal state tracking

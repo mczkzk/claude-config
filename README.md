@@ -6,9 +6,10 @@ This repository manages user configuration and documentation for Claude Code.
 
 - `CLAUDE.md` - Claude Code user instruction settings
 - `docs/` - Rules and guidelines
-  - `behavioral-control.md` - Behavioral control guidelines (investigation & implementation)
+  - `behavioral-control.md` - Behavioral control guidelines (Normal mode only)
   - `commands.md` - Command execution guidelines
   - `continuous-learning.md` - Continuous learning & documentation guidelines
+  - `methodology.md` - Programming methodology standards (TDD, refactoring)
 - `commands/` - Custom command definitions
   - `commit.md` - Git commit creation command
   - `plan.md` - Implementation plan creation command

@@ -66,11 +66,11 @@ Executes test-driven development process for plans created by /plan command.
 2. **🟢 GREEN**: Fix implementation to make tests pass (minimal change)
 3. **🔵 REFACTOR**: Improve code quality while keeping tests green
 
-**Key Principles**:
-- **Test-First**: Write test logic BEFORE implementation logic
-- **Start Simple**: Begin with the simplest test case possible
-- **Minimal Change**: Write only enough code to pass the current test
-- **Triangulation (optional)**: When implementation seems hardcoded, add more test cases to force generalization
+**Implementation Guidelines**:
+- Write test logic BEFORE implementation logic
+- Begin with the simplest test case possible
+- Write only enough code to pass the current test
+- Use triangulation when implementation seems hardcoded
 
 **Example flow**:
 ```
@@ -124,7 +124,5 @@ Executes test-driven development process for plans created by /plan command.
 
 ## Key Principles
 
-- **Test-First Development**: Always write tests before implementation
-- **Minimal Implementation**: Write only enough code to pass the current test
-- **Incremental Development**: Start simple, add complexity gradually through triangulation
 - **User Confirmation**: Never proceeds without explicit consent
+- **Methodology Reference**: Follows @docs/methodology.md for TDD and refactoring standards
