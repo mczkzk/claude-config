@@ -1,13 +1,47 @@
 # Plan Document Management Standards
 
-**Guidelines for creating, updating, and maintaining implementation plan documents in todos/ directory.**
+**Comprehensive guide for creating, updating, and managing plan documents in todos/ directory.**
+
+---
+
+## 🏗️ Planning Process
+
+### Investigation Phase
+1. **Codebase Investigation**: Search for existing patterns and reusable components
+2. **Architecture Analysis**: Ensure consistency with existing codebase
+3. **Database Design Review**: Apply @docs/database-design.md principles - investigate existing schema, validate external data structures, and plan migrations carefully
+4. **Methodology Integration**: Follow @docs/methodology.md TDD and refactoring standards
+5. **Task Breakdown**: Structure implementation in Test → Code → Refactor cycles
+
+### Plan Creation Workflow
+1. **Requirements Analysis**: Extract and structure requirements from conversations, images, specs
+2. **Feature Identification**: Identify core features and user stories
+3. **Constraint Analysis**: Identify technical requirements and limitations
+4. **Plan Document Generation**: Create structured plan following template standards
+
+---
+
+## 📂 File Management
+
+### Plan File Location
+- **Active Plans**: `todos/YYYY-MM-DD-[feature-name].md`
+- **Archived Plans**: `todos/archived/YYYY-MM-DD-[feature-name].md` (moved when no longer active)
+
+### Lifecycle Management
+- **Planning & Implementation**: Same file, updated as needed during development
+- **Plan Updates**: Direct content rewrite through natural conversation
+- **Archiving**: Manual move to `todos/archived/` when no longer active (completed, cancelled, or superseded)
+- **No Complex Tracking**: Minimal state tracking during planning phase
 
 ---
 
 ## 📋 Plan Document Format
 
 ### Standard Template Structure
-```markdown
+
+Plan documents should follow this structure:
+
+```
 # [Feature Name] - Implementation Plan
 
 ## Requirements Summary
@@ -41,23 +75,23 @@
    - Input: [edge case input]
    - Expected: [expected behavior]
 
-### Test Command Documentation
-```bash
-# Standard test command
-npm run test
-
-# Complex test commands (document these)
-npm run test --filter="{feature1|feature2}"
-npm run test:integration --env=staging
-```
-
 ## Implementation Plan
-- [ ] 🔴 Write failing test for core functionality
-- [ ] 🟢 Implement minimal solution to pass test
-- [ ] 🔵 Refactor for better design
-- [ ] 🔴 Add edge case tests
-- [ ] 🟢 Handle edge cases
-- [ ] 🔵 Final refactoring and optimization
+
+### Phase A: [Descriptive Phase Name]
+- [ ] **A.1** [Task description]
+  - [ ] Specific subtask 1
+  - [ ] Specific subtask 2
+  - [ ] Test/validation step
+- [ ] **A.2** [Another task]
+  - [ ] Implementation details
+  - [ ] Error handling
+  - [ ] Unit tests
+
+### Phase B: [Another Phase Name]  
+- [ ] **B.1** [Task description]
+  - [ ] Specific implementation
+  - [ ] Integration steps
+  - [ ] Testing
 
 ## Risk Assessment
 - **Technical Risks**: Potential technical challenges
@@ -110,10 +144,14 @@ Use consistent emoji indicators:
 - Simple file operations
 
 ### Documentation Format
+
+Plan documents should include a Commands Reference section like this:
+
 ```markdown
 ## Commands Reference
+```
 
-### Testing
+#### Testing Commands
 ```bash
 # Run specific test suites
 npm run test --filter="{auth|payment}"
@@ -122,7 +160,7 @@ npm run test --filter="{auth|payment}"
 npm run test:integration --env=staging --verbose
 ```
 
-### Database
+#### Database Commands
 ```bash
 # Run migrations with specific environment
 npm run migrate:up --env=development
@@ -130,10 +168,9 @@ npm run migrate:up --env=development
 # Rollback last 2 migrations
 npm run migrate:down --steps=2
 ```
-```
 
 ### Location in Plan Documents
-Add command documentation in a dedicated section within each plan file, not as separate files.
+Add command documentation in a dedicated section within each plan document, not as separate files.
 
 ---
 
@@ -209,7 +246,40 @@ Before starting implementation:
 - [ ] All checkboxes are marked complete
 - [ ] Implementation notes are comprehensive
 - [ ] Lessons learned are documented
-- [ ] File remains in `todos/` for manual review and archiving
+- [ ] Plan document remains in `todos/` for manual review and archiving to `todos/archived/`
+
+---
+
+## 🔄 TDD Implementation Workflow
+
+### Implementation Cycle
+Follow @docs/methodology.md principles with these specific practices:
+
+1. **🔴 RED**: Write test + create minimal failing implementation (intentionally wrong)
+2. **🟢 GREEN**: Fix implementation to make tests pass (minimal change)  
+3. **🔵 REFACTOR**: Improve code quality while keeping tests green
+
+### Implementation Guidelines
+- Write test logic BEFORE implementation logic
+- Begin with the simplest test case possible
+- Write only enough code to pass the current test
+- Use triangulation when implementation seems hardcoded
+
+### Example Implementation Flow
+```
+→ "🔴 Writing test + minimal failing implementation..."
+  ✅ Test written: expect('1') for input 1
+  ✅ Failing implementation: return $num; (returns int, not string)
+  ✅ Test fails as expected (correct RED)
+→ "🟢 Fixing implementation to pass test..."
+  ✅ Fixed: return (string)$num; (correct GREEN)
+→ "🔴 Adding triangulation test for different input..."
+  ✅ New test case fails (correct RED)
+→ "🟢 Generalizing implementation to handle multiple cases..."
+  ✅ All tests pass (correct GREEN)
+→ "🔵 Refactoring for better design..."
+  ✅ Tests still pass after refactoring
+```
 
 ---
 
@@ -218,18 +288,19 @@ Before starting implementation:
 ### With /plan Command
 - Plan documents follow this template automatically
 - Focus on comprehensive upfront planning
-- Template ensures consistency
+- Template ensures consistency across all plans
 
-### With /tdd Command
-- Progress tracking happens automatically
-- TDD phases are clearly marked
-- Implementation log is maintained
+### With Natural Language Implementation
+- Use "この計画を実装して" or select from `/plan --list`
+- Progress tracking follows same standards as structured commands
+- TDD phases are clearly marked with emoji indicators
+- Implementation log is maintained throughout development
 
 ### With Regular Development
-- Use same documentation standards
-- Apply same progress tracking
-- Maintain same quality standards
+- Use same documentation standards for consistency
+- Apply same progress tracking methodology
+- Maintain same quality standards regardless of development approach
 
 ---
 
-**Remember**: Good plan documentation during implementation saves multiples of that time in future development and maintenance.
+**Remember**: Comprehensive plan documentation during implementation saves multiples of that time in future development and maintenance.

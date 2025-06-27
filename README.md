@@ -16,7 +16,6 @@ This repository manages user configuration and documentation for Claude Code.
 - `commands/` - Custom command definitions
   - `commit.md` - Git commit creation command
   - `plan.md` - Implementation plan creation command
-  - `tdd.md` - Test-driven development command
 - `settings.json` - Claude Code configuration file
 
 ## Development Workflow
@@ -32,14 +31,9 @@ For larger implementations, use this structured approach:
 - Run `/plan ultrathink` to create detailed implementation design document
 - Document includes: API design, data structures, component architecture, test strategy
 
-### 3. Implementation | Auto-accept Mode
-- Run `/tdd` to implement using test-driven development
+### 3. Implementation | Normal Mode
+- Use natural language: "この計画を実装して" or select from `/plan --list`
 - Auto-accept mode enables rapid, uninterrupted development cycles
-
-### 4. Manual Review & Fixes | Normal Mode
-- Manual corrections and refinements
-- Run lint, type checking, and integration tests
-- Final verification before completion
 
 ### Context Recovery
 When context is lost during development:
