@@ -105,7 +105,7 @@ Completed Plans:
 - Slack text, JIRA screenshots, informal requirements
 - Conversation context and natural language descriptions
 - Technical specifications and mockups
-- Images and visual references
+- Images and visual references (automatically extracted to text during planning to preserve design details beyond token limits)
 
 ## Key Principles
 
