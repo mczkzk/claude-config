@@ -41,7 +41,7 @@
 
 Plan documents should follow this structure:
 
-```
+```markdown
 # [Feature Name] - Implementation Plan
 
 ## Requirements Summary
@@ -101,189 +101,76 @@ Plan documents should follow this structure:
 
 ---
 
-## 📊 Progress Tracking Standards
+## 📊 Implementation & Progress Management
 
-### Immediate Updates Required
-**After completing each task:**
-1. **TodoWrite**: Mark task as "completed" immediately
-2. **Plan Document**: Update checkbox `[ ]` → `[x]` immediately
-3. **Implementation Log**: Record any discoveries or changes
+### Progress Tracking
+**Update Plan Documents:**
+- Update checkbox `[ ]` → `[x]` when completing tasks
+- Mark TodoWrite tasks as "completed" immediately
+- Record discoveries and changes in Implementation Notes
 
-### Progress Indicators
-Use consistent emoji indicators:
-- 🔴 **RED Phase** - Writing failing tests
-- 🟢 **GREEN Phase** - Making tests pass
-- 🔵 **REFACTOR Phase** - Improving code quality
-- ✅ **COMPLETED** - Task/feature completed
-- ⚠️ **BLOCKED** - Task blocked, needs attention
-
-### Example Progress Update
+**Example:**
 ```markdown
-## Implementation Plan
-- [x] 🔴 Write failing test for user authentication ✅
-- [x] 🟢 Implement basic login functionality ✅
-- [ ] 🔵 Refactor authentication service
-- [ ] 🔴 Add password validation tests
+### Phase 1: Database Setup
+- [x] Create migration file
+- [x] Test migration up/down
+- [ ] Add indexes (pending: performance analysis needed)
 ```
 
----
+### TDD Implementation
+Follow @docs/methodology.md for Red-Green-Refactor cycles:
+- 🔴 **RED**: Write failing test
+- 🟢 **GREEN**: Make test pass  
+- 🔵 **REFACTOR**: Improve code quality
 
-## 📝 Command Documentation Guidelines
+(Note: 🔴🟢🔵 appear in terminal during implementation, not in plan documents)
 
-### When to Document Commands
-**Document these types of commands:**
-- Complex test commands with filters or specific options
-- Build commands with special flags
-- Database migration commands
-- Deployment commands with multiple steps
-- Any command that took time to figure out
+### Plan Updates During Implementation
+Update plan documents when:
+- User requests additional features
+- Implementation reveals new requirements
+- Better architecture patterns are discovered
 
-**Don't document these:**
-- Basic commands like `npm run test`, `npm start`
-- Standard git commands
-- Simple file operations
-
-### Documentation Format
-
-Plan documents should include a Commands Reference section like this:
-
+Simply add new tasks to existing phases:
 ```markdown
-## Commands Reference
+### Phase 1: User Profile
+- [x] Basic profile page
+- [ ] Profile validation (added during implementation)
+- [ ] Image upload (new requirement)
 ```
 
-#### Testing Commands
-```bash
-# Run specific test suites
-npm run test --filter="{auth|payment}"
+### Implementation Notes
+Document discoveries in plan documents:
 
-# Run integration tests with staging data
-npm run test:integration --env=staging --verbose
-```
-
-#### Database Commands
-```bash
-# Run migrations with specific environment
-npm run migrate:up --env=development
-
-# Rollback last 2 migrations
-npm run migrate:down --steps=2
-```
-
-### Location in Plan Documents
-Add command documentation in a dedicated section within each plan document, not as separate files.
-
----
-
-## 📈 Implementation Logging
-
-### Learning Discovery Log
-When implementing, document:
-- **Unexpected API behaviors**
-- **Workarounds for complex issues**
-- **Performance insights**
-- **Integration quirks**
-
-### Format
 ```markdown
 ## Implementation Notes
 
-### 2025-06-27 - Authentication Integration
-- **Discovery**: External API returns different data structure than documented
-- **Solution**: Added data transformation layer in `src/utils/api-transform.js`
-- **Impact**: All future API integrations should use this pattern
-
-### 2025-06-27 - Database Performance
-- **Issue**: Query performance degraded with large datasets
-- **Solution**: Added composite index on (user_id, created_at)
-- **Command**: `CREATE INDEX idx_user_created ON activities(user_id, created_at);`
+### 2025-06-27 - API Integration
+- **Discovery**: External API returns different structure than documented
+- **Solution**: Added transformation layer in `src/utils/api-transform.js`
+- **Command**: `npm run test:api -- --verbose` (for debugging)
 ```
 
----
+### Command Documentation
+Include complex commands in plan documents:
 
-## 🔄 Plan Updates During Implementation
-
-### When to Update Plans
-- **Scope Changes**: User requests additional features
-- **Technical Discoveries**: Implementation reveals new requirements
-- **Architecture Changes**: Better patterns discovered during implementation
-
-### Update Process
-1. **Update Requirements**: Add/modify requirement items
-2. **Update File Changes**: Add newly discovered files
-3. **Update Implementation Plan**: Add/modify tasks as needed
-4. **Continue Implementation**: No need to restart, just continue with updated plan
-
-### Example Update
 ```markdown
-<!-- Original plan -->
-- [ ] Add user profile page
+## Commands Reference
 
-<!-- Updated during implementation -->
-- [ ] Add user profile page
-- [ ] Add profile image upload (added during implementation)
-- [ ] Add profile validation (discovered requirement)
+### Testing
+# Run filtered tests
+npm run test --filter="{auth|payment}"
+
+### Database  
+# Migration with specific env
+npm run migrate:up --env=development
 ```
+
+Don't document basic commands like `npm test` or `git commit`.
 
 ---
 
-## 🎯 Quality Standards
-
-### Plan Document Checklist
-Before starting implementation:
-- [ ] Requirements are specific and testable
-- [ ] File changes are comprehensive
-- [ ] Test cases are defined
-- [ ] Commands are documented if complex
-- [ ] Risks are identified
-
-### During Implementation
-- [ ] Progress is updated immediately after each task
-- [ ] New discoveries are logged
-- [ ] Plan is updated when scope changes
-- [ ] Commands are documented when discovered
-
-### Completion Standards
-- [ ] All checkboxes are marked complete
-- [ ] Implementation notes are comprehensive
-- [ ] Lessons learned are documented
-- [ ] Plan document remains in `todos/` for manual review and archiving to `todos/archived/`
-
----
-
-## 🔄 TDD Implementation Workflow
-
-### Implementation Cycle
-Follow @docs/methodology.md principles with these specific practices:
-
-1. **🔴 RED**: Write test + create minimal failing implementation (intentionally wrong)
-2. **🟢 GREEN**: Fix implementation to make tests pass (minimal change)  
-3. **🔵 REFACTOR**: Improve code quality while keeping tests green
-
-### Implementation Guidelines
-- Write test logic BEFORE implementation logic
-- Begin with the simplest test case possible
-- Write only enough code to pass the current test
-- Use triangulation when implementation seems hardcoded
-
-### Example Implementation Flow
-```
-→ "🔴 Writing test + minimal failing implementation..."
-  ✅ Test written: expect('1') for input 1
-  ✅ Failing implementation: return $num; (returns int, not string)
-  ✅ Test fails as expected (correct RED)
-→ "🟢 Fixing implementation to pass test..."
-  ✅ Fixed: return (string)$num; (correct GREEN)
-→ "🔴 Adding triangulation test for different input..."
-  ✅ New test case fails (correct RED)
-→ "🟢 Generalizing implementation to handle multiple cases..."
-  ✅ All tests pass (correct GREEN)
-→ "🔵 Refactoring for better design..."
-  ✅ Tests still pass after refactoring
-```
-
----
-
-## 🚀 Integration with Development Workflow
+## 🚀 Development Workflow Integration
 
 ### With /plan Command
 - Plan documents follow this template automatically
