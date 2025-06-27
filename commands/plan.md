@@ -11,53 +11,92 @@ allowed-tools:
 
 # Implementation Planning Command
 
-Creates detailed implementation plans when you want to plan systematically before implementation.
+Creates detailed implementation plans from completed pre-plan investigations.
 
 ## Usage
 
 ```
-/plan
-# Analyzes entire conversation history to create implementation plan
-
-/plan [specifications, requirements, mockups, or descriptions]
-# Creates plan directly from provided specifications
-
-/plan --list
-# Shows all existing plans
+/plan [feature-name]
+# Creates implementation plan for specific feature (requires completed pre-plan)
 ```
 
-## Core Features
+## Command Execution Steps
 
-### Conversation Analysis Mode (`/plan`)
-1. **Full Session Analysis**: Reviews entire conversation from beginning
-2. **Requirement Extraction**: Pulls specs from discussions, images, and context
-3. **Feature Name Generation**: Auto-creates appropriate feature names
-4. **Context Integration**: Consolidates scattered requirements into structured specs
+1. **Find Specific Pre-Plan**: Look for `todos/[feature-name]-pre-plan.md` file
+2. **Verify Completion**: Ensure all checklist items are marked `[x]` in pre-plan file
+3. **Create Plan Document**: Generate `todos/[feature-name].md` using template below
+4. **Populate Content**: Use pre-plan investigation findings to fill plan sections
 
-### Direct Specification Mode (`/plan [specs]`)
-1. **Requirement Parsing**: Structures provided specifications
-2. **Feature Identification**: Extracts core features and user stories
-3. **Constraint Analysis**: Identifies technical requirements and limitations
+## Plan Creation Workflow
 
-### Planning Process
-The `/plan` command follows @docs/plan-document-standards.md for comprehensive planning methodology including codebase investigation, architecture analysis, database design review, and TDD-based planning.
+1. **Database Design Review**: Apply @docs/database-design.md principles for schema changes
+2. **Methodology Integration**: Follow @docs/methodology.md TDD and refactoring standards
+3. **Task Breakdown**: Structure implementation in Test → Code → Refactor cycles
+4. **Plan Document Generation**: Create structured plan following template below
 
-## Plan List Output (`/plan --list`)
+## Plan Document Template
 
-```
-📋 Current Plans:
+```markdown
+# [Feature Name] - Implementation Plan
 
-Active Plans:
-• todos/2025-06-25-user-favorites.md (updated today) - User favorite functionality [3/8 tasks complete]
-• todos/2025-06-22-api-optimization.md (3 days ago) - Performance improvements [0/5 tasks complete]
+## Requirements Summary
+- [ ] Feature requirement 1
+- [ ] Feature requirement 2
+- [ ] Feature requirement 3
 
-Archived Plans:
-• todos/archived/2025-06-18-auth-system.md (archived 1 week ago) - Authentication overhaul
+## Architecture Impact
+- **Affected Components**: List of components that will be modified
+- **Integration Points**: How this feature connects with existing systems
+- **Dependencies**: External libraries, APIs, or services required
+
+## File Changes
+
+### Modified Files
+- `src/component1.js` - Add new functionality
+- `src/component2.js` - Update existing method
+- `tests/component1.test.js` - Add test cases
+
+### New Files
+- `src/features/new-feature.js` - Core implementation
+- `src/features/new-feature.test.js` - Test suite
+
+## Testing Strategy
+### Test Cases (TDD)
+1. **Basic functionality test**
+   - Input: [specific input]
+   - Expected: [expected output]
+   
+2. **Edge case test**
+   - Input: [edge case input]
+   - Expected: [expected behavior]
+
+## Implementation Plan
+
+### Phase A: [Descriptive Phase Name]
+- [ ] **A.1** [Task description]
+  - [ ] Specific subtask 1
+  - [ ] Specific subtask 2
+  - [ ] Test/validation step
+- [ ] **A.2** [Another task]
+  - [ ] Implementation details
+  - [ ] Error handling
+  - [ ] Unit tests
+
+### Phase B: [Another Phase Name]  
+- [ ] **B.1** [Task description]
+  - [ ] Specific implementation
+  - [ ] Integration steps
+  - [ ] Testing
+
+## Risk Assessment
+- **Technical Risks**: Potential technical challenges
+- **Dependencies**: External dependency risks
+- **Mitigation**: Strategies to address identified risks
 ```
 
 ## Key Principles
 
-- **Planning Focus**: This command only creates plans, does not implement
-- **Systematic Planning**: Use when you want structured approach to development
-- **Natural Conversation**: Extract requirements from discussion context
-- **Simple Management**: One file per plan, minimal state tracking
+- **Pre-Plan Required**: Must have completed `[feature-name]-pre-plan.md` before planning
+- **Investigation-Based**: Uses investigation findings to create implementation design
+- **Template-Driven**: Ensures consistency across all plan documents
+- **Implementation-Ready**: Creates actionable tasks for development

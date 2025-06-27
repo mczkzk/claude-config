@@ -50,11 +50,11 @@ This document defines the programming methodologies and practices to follow when
 - **Code quality standards** remain consistent regardless of execution mode
 
 ### TDD-Specific Contexts
-- **TDD methodology** primarily applies during `/tdd` command execution
-- **Test-first approach** may be referenced in planning phases
+- **TDD methodology** applies during implementation phases following plan documents
+- **Test-first approach** is integrated into plan document structure and implementation workflow
 
 ## Integration with Commands
 
-- **`/plan`**: Consider refactoring opportunities during design phase
-- **`/tdd`**: Strict adherence to TDD methodology throughout implementation
+- **`/plan`**: Consider refactoring opportunities during design phase, structure TDD cycles in implementation tasks
+- **Natural language implementation**: Apply TDD methodology with Red-Green-Refactor cycles
 - **Manual development**: Apply refactoring principles for code improvements

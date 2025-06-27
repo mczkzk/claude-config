@@ -8,4 +8,5 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 @docs/database-design.md
 @docs/date.md
 @docs/methodology.md
+@docs/plan-document-standards.md
 @docs/shortcuts.md

@@ -16,23 +16,26 @@ This repository manages user configuration and documentation for Claude Code.
 - `commands/` - Custom command definitions
   - `commit.md` - Git commit creation command
   - `plan.md` - Implementation plan creation command
+  - `pre-plan.md` - Pre-planning investigation command
 - `settings.json` - Claude Code configuration file
 
 ## Development Workflow
 
 For larger implementations, use this structured approach:
 
-### 1. Requirements Analysis | Plan Mode
-- Load specifications, screenshots, and requirements
-- Use Plan mode to understand and organize requirements
+### 1. Pre-Planning Investigation | Normal Mode
+- Run `/pre-plan [feature-name]` to create investigation checklist
+- System prompts for specifications, screenshots, requirements
+- Complete all investigation items through interactive conversation
+- Thorough codebase, database, and dependency analysis
 
 ### 2. Design Documentation | Normal Mode  
-- Plan mode will create initial plan - decline it with "No"
-- Run `/plan ultrathink` to create detailed implementation design document
+- Run `/plan [feature-name]` (requires completed pre-plan)
+- Creates detailed implementation design document
 - Document includes: API design, data structures, component architecture, test strategy
 
-### 3. Implementation | Normal Mode
-- Use natural language: "この計画を実装して" or select from `/plan --list`
+### 3. Implementation | Auto-accept Mode
+- Use natural language: "この計画を実装して" or specify plan file
 - Auto-accept mode enables rapid, uninterrupted development cycles
 
 ### Context Recovery
