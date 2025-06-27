@@ -5,3 +5,4 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 @docs/behavioral-control.md
 @docs/commands.md
 @docs/continuous-learning.md
+@docs/shortcuts.md
