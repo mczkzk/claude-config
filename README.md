@@ -15,6 +15,34 @@ This repository manages user configuration and documentation for Claude Code.
   - `tdd.md` - Test-driven development command
 - `settings.json` - Claude Code configuration file
 
+## Development Workflow
+
+For larger implementations, use this structured approach:
+
+### 1. Requirements Analysis | Plan Mode
+- Load specifications, screenshots, and requirements
+- Use Plan mode to understand and organize requirements
+
+### 2. Design Documentation | Normal Mode  
+- Plan mode will create initial plan - decline it with "No"
+- Run `/plan ultrathink` to create detailed implementation design document
+- Document includes: API design, data structures, component architecture, test strategy
+
+### 3. Implementation | Auto-accept Mode
+- Run `/tdd` to implement using test-driven development
+- Auto-accept mode enables rapid, uninterrupted development cycles
+
+### 4. Manual Review & Fixes | Normal Mode
+- Manual corrections and refinements
+- Run lint, type checking, and integration tests
+- Final verification before completion
+
+### Context Recovery
+When context is lost during development:
+- Reference the implementation design document
+- Re-paste screenshots if needed
+- Ensure all requirements are still captured
+
 ## How to Sync Settings on Another PC
 
 If you have an existing `~/.claude` directory, you can sync only the configuration files using the following steps:
