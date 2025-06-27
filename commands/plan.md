@@ -45,7 +45,7 @@ Creates detailed implementation plans when you want to plan systematically befor
 3. **Database Design Review**: Apply @docs/database-design.md principles - investigate existing schema, validate external data structures, and plan migrations carefully
 4. **TDD-Based Planning**: Creates plans following @docs/methodology.md TDD and refactoring standards
 5. **Task Breakdown**: Structures implementation in Test → Code → Refactor cycles
-6. **Plan Document Creation**: Generates detailed markdown plan files
+6. **Plan Document Creation**: Generates detailed markdown plan files following @docs/plan-document-standards.md standards
 
 ## Planning Workflow
 
