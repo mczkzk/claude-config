@@ -11,9 +11,9 @@
 
 ---
 
-## 📋 Universal Pre-Implementation Checklist
+## 🔍 Investigation Techniques
 
-### Phase 1: Schema Investigation
+### 1. **Schema Exploration**
 ```bash
 # Technology-agnostic commands (adapt to your DB)
 # PostgreSQL: \d table_name
@@ -26,32 +26,37 @@
 # MongoDB: db.collection.find().limit(5);
 ```
 
-**Questions to Answer:**
-- [ ] What is the purpose of each existing column?
-- [ ] What data types and constraints are used?
-- [ ] Are there existing relationships/foreign keys?
-- [ ] What indexes exist and why?
-- [ ] What is the current data volume and growth pattern?
+### 2. **Database Analysis**
+```sql
+-- Find existing patterns
+SELECT column_name, data_type, is_nullable 
+FROM information_schema.columns 
+WHERE table_name = 'existing_similar_table';
 
-### Phase 2: Domain Analysis
-- [ ] **Similar Features**: How do existing similar features handle data?
-- [ ] **Unique Requirements**: What makes this feature different?
-- [ ] **Business Rules**: What constraints does the domain impose?
-- [ ] **Future Extensibility**: What changes might be needed later?
-- [ ] **Performance Impact**: How will this affect query performance?
+-- Sample data for understanding
+SELECT * FROM existing_table LIMIT 10;
 
-### Phase 3: External Dependencies
-- [ ] **Third-party APIs**: What data structures do they actually return?
-- [ ] **External Packages**: What are the real runtime types vs documentation?
-- [ ] **Integration Points**: How do external systems expect data to be formatted?
-- [ ] **Version Compatibility**: Are there breaking changes in dependencies?
+-- Check relationships
+SELECT * FROM information_schema.key_column_usage 
+WHERE table_name = 'target_table';
+```
 
-### Phase 4: Migration Strategy
-- [ ] **Backward Compatibility**: Will existing data/code still work?
-- [ ] **Rollback Plan**: Can changes be safely reverted?
-- [ ] **Data Migration**: How will existing data be transformed?
-- [ ] **Downtime Requirements**: Can changes be applied online?
-- [ ] **Testing Strategy**: How will changes be verified in production?
+### 3. **Runtime Data Validation**
+```javascript
+// Language-agnostic approach
+console.log('INVESTIGATION: Actual data structure', actualObject);
+// Log in development, remove before production
+```
+
+### 4. **Prototype Validation**
+```javascript
+// Create minimal test to verify assumptions
+async function investigateDataStructure() {
+  const data = await externalAPI.getData();
+  console.log('PROTOTYPE: External API structure', data);
+  // Verify assumptions before building schema
+}
+```
 
 ---
 
@@ -75,11 +80,9 @@
 
 ---
 
-## 🛠️ Technology-Agnostic Best Practices
+## 🛠️ Migration Management
 
-### Migration Management
-
-#### Development Phase
+### Development Phase
 ```bash
 # Create experimental migrations freely
 # Test with real data
@@ -87,7 +90,7 @@
 # Document what works and what doesn't
 ```
 
-#### Pre-Production Cleanup
+### Pre-Production Cleanup
 ```bash
 # Remove experimental/temporary migrations
 # Consolidate related changes into single migration
@@ -95,7 +98,7 @@
 # Test migration + rollback sequence
 ```
 
-#### Production Deployment
+### Production Deployment
 ```bash
 # Backup before migration
 # Apply migrations during low-traffic windows
@@ -103,24 +106,26 @@
 # Have rollback plan ready
 ```
 
-### Schema Design Principles
+---
 
-#### 1. **Clarity Over Cleverness**
+## 📐 Schema Design Principles
+
+### 1. **Clarity Over Cleverness**
 - Use descriptive names for tables and columns
 - Prefer explicit relationships over implicit ones
 - Document complex business rules in comments
 
-#### 2. **Consistency Within Domain**
+### 2. **Consistency Within Domain**
 - Follow existing naming conventions
 - Use similar data types for similar concepts
 - Maintain consistent relationship patterns
 
-#### 3. **Data Integrity**
+### 3. **Data Integrity**
 - Use appropriate constraints (NOT NULL, UNIQUE, CHECK)
 - Implement foreign key relationships where applicable
 - Consider domain-specific validation rules
 
-#### 4. **Performance Considerations**
+### 4. **Performance Considerations**
 - Index frequently queried columns
 - Consider query patterns when designing schema
 - Balance normalization vs query performance
@@ -128,76 +133,19 @@
 
 ---
 
-## 🔍 Investigation Techniques
+## 💡 Investigation Framework
 
-### 1. **Runtime Data Logging**
-```javascript
-// Language-agnostic approach
-console.log('INVESTIGATION: Actual data structure', actualObject);
-// Log in development, remove before production
-```
-
-### 2. **Database Exploration**
-```sql
--- Find existing patterns
-SELECT column_name, data_type, is_nullable 
-FROM information_schema.columns 
-WHERE table_name = 'existing_similar_table';
-
--- Sample data for understanding
-SELECT * FROM existing_table LIMIT 10;
-
--- Check relationships
-SELECT * FROM information_schema.key_column_usage 
-WHERE table_name = 'target_table';
-```
-
-### 3. **Prototype Validation**
-```javascript
-// Create minimal test to verify assumptions
-async function investigateDataStructure() {
-  const data = await externalAPI.getData();
-  console.log('PROTOTYPE: External API structure', data);
-  // Verify assumptions before building schema
-}
-```
-
----
-
-## 🎯 Success Criteria
-
-### Technical Success
-- [ ] New schema follows existing project conventions
-- [ ] All migrations are reversible
-- [ ] Performance requirements are met
-- [ ] Data integrity is maintained
-- [ ] External integrations work as expected
-
-### Process Success
-- [ ] Investigation was thorough and documented
-- [ ] Assumptions were validated with real data
-- [ ] Changes were implemented incrementally
-- [ ] User feedback was incorporated early
-- [ ] Rollback plan was tested
-
-### Future-Proofing Success
-- [ ] Schema can accommodate reasonable future requirements
-- [ ] External dependency changes won't break the design
-- [ ] Code is maintainable and well-documented
-- [ ] Performance will scale with expected data growth
-
----
-
-## 💡 Quick Reference
-
-### Before Every Database Change
-1. **Understand** existing schema and data
-2. **Investigate** external dependencies with real data
-3. **Prototype** key assumptions
-4. **Design** with future needs in mind
-5. **Implement** incrementally
-6. **Validate** with real usage
-7. **Document** lessons learned
+### Key Questions to Answer
+- **Purpose**: What is the purpose of each existing column?
+- **Types**: What data types and constraints are used?
+- **Relationships**: Are there existing relationships/foreign keys?
+- **Indexes**: What indexes exist and why?
+- **Volume**: What is the current data volume and growth pattern?
+- **Similar Features**: How do existing similar features handle data?
+- **Unique Requirements**: What makes this feature different?
+- **Business Rules**: What constraints does the domain impose?
+- **Future Extensibility**: What changes might be needed later?
+- **Performance Impact**: How will this affect query performance?
 
 ### Red Flags That Require Investigation
 - "This should work like Feature X"
@@ -212,6 +160,30 @@ async function investigateDataStructure() {
 - ✅ Domain requirements are clearly defined
 - ✅ Migration path is tested
 - ✅ Rollback strategy is confirmed
+
+---
+
+## 🎯 Success Indicators
+
+### Technical Success
+- New schema follows existing project conventions
+- All migrations are reversible
+- Performance requirements are met
+- Data integrity is maintained
+- External integrations work as expected
+
+### Process Success
+- Investigation was thorough and documented
+- Assumptions were validated with real data
+- Changes were implemented incrementally
+- User feedback was incorporated early
+- Rollback plan was tested
+
+### Future-Proofing Success
+- Schema can accommodate reasonable future requirements
+- External dependency changes won't break the design
+- Code is maintainable and well-documented
+- Performance will scale with expected data growth
 
 ---
 

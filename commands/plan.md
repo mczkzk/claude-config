@@ -92,6 +92,11 @@ Creates detailed implementation plans from completed pre-plan investigations.
 - **Technical Risks**: Potential technical challenges
 - **Dependencies**: External dependency risks
 - **Mitigation**: Strategies to address identified risks
+
+## Reference Documentation
+- **Development Methodology**: @docs/methodology.md (TDD, refactoring principles)
+- **Database Design**: @docs/database-design.md (schema design, migration guidelines)
+- **Progress Management**: @docs/plan-document-standards.md (progress tracking, document updates)
 ```
 
 ## Key Principles

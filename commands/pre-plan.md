@@ -60,11 +60,14 @@ Guide user through checklist completion:
 - [ ] **Integration points**: How feature connects with existing system
 
 ## 🗄️ Database Investigation
-**For database-related features, complete @docs/database-design.md checklist:**
-- [ ] **Phase 1: Schema Investigation** - Current schema and data patterns understood
-- [ ] **Phase 2: Domain Analysis** - Similar features and business rules analyzed
-- [ ] **Phase 3: External Dependencies** - Third-party data structures verified
-- [ ] **Phase 4: Migration Strategy** - Safe deployment and rollback approach planned
+- [ ] **Current schema mapped**: Existing tables, columns, relationships, and constraints documented
+- [ ] **Data patterns sampled**: Actual data examined to understand structure and volume
+- [ ] **Similar features analyzed**: How existing features handle data storage and relationships
+- [ ] **Domain rules identified**: Business constraints and validation requirements documented
+- [ ] **External data verified**: Third-party API responses logged and data structures confirmed
+- [ ] **Migration approach planned**: Backward compatibility, rollback strategy, and deployment approach defined
+- [ ] **Performance considerations**: Index requirements and query patterns evaluated
+- [ ] **Anti-patterns avoided**: No assumptions without verification, no copy-paste patterns without analysis
 
 ## 🔗 External Dependencies
 - [ ] **APIs validated**: Third-party service responses verified with real data
@@ -77,6 +80,17 @@ Guide user through checklist completion:
 - [ ] **Security considerations**: Authentication, authorization, data protection
 - [ ] **Testing strategy**: Unit, integration, and end-to-end test approach
 - [ ] **Deployment approach**: How feature will be released and monitored
+
+## 📝 Investigation Notes
+
+### Findings
+*Record key discoveries during investigation*
+
+### Decisions
+*Document important architectural or design decisions made*
+
+### Questions
+*List unresolved questions that need clarification*
 
 ---
 
