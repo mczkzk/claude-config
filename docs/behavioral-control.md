@@ -1,4 +1,6 @@
-# Behavioral Control Guidelines
+# Behavioral Control Guidelines (Normal Mode Only)
+
+**Note: These guidelines apply only when in Normal mode. Plan mode and Auto-accept mode have their own behavioral patterns.**
 
 ## Investigation Keywords
 When receiving instructions containing words like "調べて" (investigate), "探して" (search), "見つけて" (find), or similar investigative terms:
