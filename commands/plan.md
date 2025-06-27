@@ -97,6 +97,12 @@ Creates detailed implementation plans from completed pre-plan investigations.
 - **Development Methodology**: @docs/methodology.md (TDD, refactoring principles)
 - **Database Design**: @docs/database-design.md (schema design, migration guidelines)
 - **Progress Management**: @docs/plan-document-standards.md (progress tracking, document updates)
+
+## Commands Reference
+*Document complex commands (not basic ones like npm test)*
+
+## Implementation Notes
+*Record discoveries, decisions, and important findings during implementation*
 ```
 
 ## Key Principles

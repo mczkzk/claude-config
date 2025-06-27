@@ -42,7 +42,7 @@ Simply add new tasks to existing phases:
 - [ ] Image upload (new requirement)
 ```
 
-### Implementation Notes
+### Implementation Notes Format
 Document discoveries in plan documents:
 
 ```markdown
@@ -54,7 +54,7 @@ Document discoveries in plan documents:
 - **Command**: `npm run test:api -- --verbose` (for debugging)
 ```
 
-### Command Documentation
+### Commands Reference Format
 Include complex commands in plan documents:
 
 ```markdown
