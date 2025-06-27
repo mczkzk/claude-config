@@ -82,6 +82,7 @@ Plans can be updated anytime through natural conversation:
 Generated plans include:
 - **Requirements Summary**: Structured list of what needs to be built
 - **Architecture Impact**: How this fits into existing codebase
+- **File Changes**: List of Modified Files and New Files to be created
 - **Testing Strategy**: Test cases and TDD cycles (written first)
 - **Implementation Plan**: Step-by-step TDD development tasks with checkboxes
 - **Risk Assessment**: Potential challenges and mitigation strategies

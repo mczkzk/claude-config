@@ -92,6 +92,7 @@ Executes test-driven development process for plans created by /plan command.
 
 **When implementation reveals plan changes needed**:
 - User mentions: "Add mobile support to the plan", "Database optimization needed"
+- Update File Changes list when new files are created or additional modifications needed
 - Update plan content as needed
 - Continue implementation with updated plan
 
