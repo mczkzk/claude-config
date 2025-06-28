@@ -13,7 +13,6 @@ This repository manages user configuration and documentation for Claude Code.
   - `production-safety.md` - Production environment safety protocol and incident prevention
   - `date.md` - Date management standards for documentation
   - `methodology.md` - Programming methodology standards (TDD, refactoring)
-  - `plan-document.md` - Plan document format and progress tracking standards
 - `commands/` - Custom command definitions
   - `commit.md` - Git commit creation command
   - `plan-search.md` - Investigation and requirements gathering command
