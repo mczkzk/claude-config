@@ -49,6 +49,16 @@ Creates detailed implementation plans from completed plan-search investigations.
 ```markdown
 # [Feature Name] - Implementation Plan
 
+**STRICT IMPLEMENTATION PROTOCOL**:
+
+Before marking ANY implementation task complete:
+- [ ] Evidence documented in Implementation Notes with specific details (code snippets, test results, file paths)
+- [ ] Can answer "How do you know this works?" for this task
+- [ ] Implementation Notes contain proof of functionality (test output, screenshots, working code)
+- [ ] Next person reading notes can verify your implementation
+
+**Rule: If Implementation Notes don't prove the task completion, uncheck the box**
+
 ## 🔍 Plan Document Verification
 
 **CRITICAL**: Before marking plan as ready for implementation, verify all sections are present:

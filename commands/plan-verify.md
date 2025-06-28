@@ -30,13 +30,14 @@ Verifies plan document completeness and quality.
 2. 🔎 **CRITICAL Initial State Verification**: 
    - Run `grep '\- \[ \]' "plans/[feature-name].md"` to check unchecked items
    - **EXPECTED STATE**: Should find EXACTLY the "Plan Document Verification" checklist (10 items) + any Implementation Plan tasks
-   - **INVALID STATE**: If Plan Document Verification items are already checked → STOP, return error message
+   - **RESET REQUIRED**: If Plan Document Verification items are already checked → Reset ALL to `[ ]` (unchecked state)
    - **MISSING STATE**: If Plan Document Verification section missing → STOP, return error message
 3. 📋 **STRICT Checkbox State Validation**:
-   - Plan Document Verification section: ALL items MUST be unchecked `[ ]`
+   - Plan Document Verification section: ALL items MUST be unchecked `[ ]` (reset if needed)
    - Requirements Summary: Items should remain unchecked (for implementation phase)
    - Implementation Plan: Items should remain unchecked (for implementation phase)
    - Other sections: No checkboxes expected (templates only)
+   - **Action Required**: If any Plan Document Verification items are checked `[x]`, reset them to `[ ]` before proceeding
 4. 📋 **Interactive Verification**: Go through each section with user:
    - Review section completeness and quality
    - Identify missing or insufficient content
