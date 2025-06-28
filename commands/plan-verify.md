@@ -17,11 +17,16 @@ Verifies plan document completeness and quality.
 ```
 /plan-verify [feature-name]
 # Verifies plan document completeness and quality
+
+/plan-verify
+# Verifies plan document when feature-name is contextually obvious
 ```
 
 ## Command Execution Steps
 
-1. 🔍 **Find Plan Document**: Look for `plans/[feature-name].md` file
+1. 🔍 **Find Plan Document**: 
+   - If feature-name provided: Look for `plans/[feature-name].md` file
+   - If no feature-name: Search `plans/` directory for `*.md` files (excluding `*-search.md` and `archive/` subdirectory) and identify from context
 2. 🔎 **CRITICAL Initial State Verification**: 
    - Run `grep '\- \[ \]' "plans/[feature-name].md"` to check unchecked items
    - **EXPECTED STATE**: Should find EXACTLY the "Plan Document Verification" checklist (10 items) + any Implementation Plan tasks

@@ -45,6 +45,10 @@ For larger implementations, use this structured approach:
 - Use natural language: "go", "この計画を実装して", or specify plan file
 - Auto-accept mode enables rapid, uninterrupted development cycles
 
+### 5. Archive
+- Move completed, paused, or shelved plan files to `plans/archive/` directory
+- Keeps active workspace clean while preserving work for reference
+
 ### Context Recovery
 When context is lost during development:
 - Reference the implementation design document

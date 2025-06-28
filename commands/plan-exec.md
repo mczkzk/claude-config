@@ -18,11 +18,16 @@ Creates detailed implementation plans from completed plan-search investigations.
 ```
 /plan-exec [feature-name]
 # Creates implementation plan for specific feature (requires completed plan-search)
+
+/plan-exec
+# Creates implementation plan when feature-name is contextually obvious
 ```
 
 ## Command Execution Steps
 
-1. 🔍 **Find Plan Search**: Look for `plans/[feature-name]-search.md` file
+1. 🔍 **Find Plan Search**: 
+   - If feature-name provided: Look for `plans/[feature-name]-search.md` file
+   - If no feature-name: Search `plans/` directory for `*-search.md` files (excluding `archive/` subdirectory) and identify from context
 2. ✅ **STRICT Completion Verification**: 
    - Search file for `- [ ]` patterns using grep or manual scan
    - If ANY unchecked items found → STOP, return error message
