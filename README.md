@@ -15,28 +15,34 @@ This repository manages user configuration and documentation for Claude Code.
   - `plan-document.md` - Plan document format and progress tracking standards
 - `commands/` - Custom command definitions
   - `commit.md` - Git commit creation command
-  - `plan.md` - Implementation plan creation command
-  - `pre-plan.md` - Pre-planning investigation command
+  - `plan-search.md` - Investigation and requirements gathering command
+  - `plan-exec.md` - Implementation plan creation command
+  - `plan-verify.md` - Plan verification and quality assurance command
 - `settings.json` - Claude Code configuration file
 
 ## Development Workflow
 
 For larger implementations, use this structured approach:
 
-### 1. Pre-Planning Investigation | Normal Mode
-- Run `/pre-plan [feature-name]` to create investigation checklist
+### 1. Investigation & Requirements | Normal Mode
+- Run `/plan-search [feature-name]` to create investigation checklist
 - System prompts for specifications, screenshots, requirements
 - Complete all investigation items through interactive conversation
 - Thorough codebase, database, and dependency analysis
-- **Tip**: Save screenshots in `plans/` directory for easy reference during pre-plan phase
+- **Tip**: Save screenshots in `plans/` directory for easy reference during search phase
 
-### 2. Design Documentation | Normal Mode  
-- Run `/plan [feature-name]` (requires completed pre-plan)
+### 2. Plan Creation | Normal Mode  
+- Run `/plan-exec [feature-name]` (requires completed plan-search)
 - Creates detailed implementation design document
 - Document includes: API design, data structures, component architecture, test strategy
 
-### 3. Implementation | Auto-accept Mode
-- Use natural language: "この計画を実装して" or specify plan file
+### 3. Plan Verification | Normal Mode
+- Run `/plan-verify [feature-name]` to verify plan quality and completeness
+- Interactive verification of each plan section
+- Quality assurance before implementation begins
+
+### 4. Implementation | Auto-accept Mode
+- Use natural language: "go", "この計画を実装して", or specify plan file
 - Auto-accept mode enables rapid, uninterrupted development cycles
 
 ### Context Recovery

@@ -9,28 +9,28 @@ allowed-tools:
   - LS
 ---
 
-# Implementation Planning Command
+# Plan Execution Command
 
-Creates detailed implementation plans from completed pre-plan investigations.
+Creates detailed implementation plans from completed plan-search investigations.
 
 ## Usage
 
 ```
-/plan [feature-name]
-# Creates implementation plan for specific feature (requires completed pre-plan)
+/plan-exec [feature-name]
+# Creates implementation plan for specific feature (requires completed plan-search)
 ```
 
 ## Command Execution Steps
 
-1. 🔍 **Find Specific Pre-Plan**: Look for `plans/[feature-name]-pre-plan.md` file
+1. 🔍 **Find Plan Search**: Look for `plans/[feature-name]-search.md` file
 2. ✅ **STRICT Completion Verification**: 
    - Search file for `- [ ]` patterns using grep or manual scan
    - If ANY unchecked items found → STOP, return error message
    - Verify status shows "✅ Investigation completed" 
    - Only proceed if 100% verified complete
-3. 🔎 **Verification Command**: Run `grep '\- \[ \]' "plans/[feature-name]-pre-plan.md"` to confirm zero results
+3. 🔎 **Verification Command**: Run `grep '\- \[ \]' "plans/[feature-name]-search.md"` to confirm zero results
 4. 📝 **Create Plan Document**: Generate `plans/[feature-name].md` using template below ONLY after verification passes
-5. 📋 **Populate Content**: Use pre-plan investigation findings to fill plan sections
+5. 📋 **Populate Content**: Use plan-search investigation findings to fill plan sections
 
 ## Plan Creation Workflow
 
@@ -166,7 +166,7 @@ Note: 🔴🟢🔵 appear in terminal during implementation, not in plan documen
 
 ## Key Principles
 
-- **Pre-Plan Required**: Must have completed `[feature-name]-pre-plan.md` before planning
+- **Plan Search Required**: Must have completed `[feature-name]-search.md` before planning
 - **Strict Verification**: Never trust status alone - verify actual checkbox states
 - **Investigation-Based**: Uses investigation findings to create implementation design
 - **Template-Driven**: Ensures consistency across all plan documents

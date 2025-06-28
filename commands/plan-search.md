@@ -1,5 +1,5 @@
 ---
-description: Create investigation checklist before planning implementation
+description: Create investigation checklist and gather requirements
 allowed-tools:
   - Read
   - Write
@@ -9,23 +9,23 @@ allowed-tools:
   - Task
 ---
 
-# Pre-Planning Investigation Command
+# Plan Search Command
 
 Creates investigation checklist and gathers requirements before implementation planning.
 
 ## Usage
 
 ```
-/pre-plan [feature-name]
+/plan-search [feature-name]
 # Creates investigation checklist and starts requirements gathering
 ```
 
 ## Command Flow
 
 ### 1. Create Investigation File
-- Generate `plans/[feature-name]-pre-plan.md`
+- Generate `plans/[feature-name]-search.md`
 - Include comprehensive investigation checklist
-- All items must be completed before `/plan` command
+- All items must be completed before `/plan-exec` command
 
 ### 2. Requirements Gathering
 Prompt user to provide:
@@ -44,7 +44,7 @@ Guide user through checklist completion:
 ## Investigation Checklist Template
 
 ```markdown
-# Pre-Planning Investigation - [Feature Name]
+# Plan Search Investigation - [Feature Name]
 
 ## 📋 Requirements Gathering
 - [ ] **Specifications provided**: Technical requirements documented
@@ -88,7 +88,7 @@ Guide user through checklist completion:
 ---
 
 **Status**: ⚠️ Investigation in progress
-**Next Step**: Complete all checklist items, then run `/plan [feature-name]`
+**Next Step**: Complete all checklist items, then run `/plan-exec [feature-name]`
 ```
 
 ## Final Verification Before Status Update
@@ -114,7 +114,7 @@ Guide user through checklist completion:
 
 ## Integration with Planning
 
-- `/plan [feature-name]` requires completed `[feature-name]-pre-plan.md`
+- `/plan-exec [feature-name]` requires completed `[feature-name]-search.md`
 - All checklist items must be marked `[x]` 
 - Investigation findings inform detailed planning
-- Pre-plan serves as foundation for implementation design
+- Plan-search serves as foundation for implementation design
