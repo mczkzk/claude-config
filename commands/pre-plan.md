@@ -83,20 +83,25 @@ Guide user through checklist completion:
 
 ## 📝 Investigation Notes
 
-### Findings
-*Record key discoveries during investigation - BE DETAILED. Include specific technical details, version numbers, performance metrics, constraints discovered through testing or conversation. This preserves context that may be lost due to token limits.*
-
-### Decisions
-*Document important architectural or design decisions made - BE SPECIFIC. Include rationale, alternatives considered, and technical justification. Record the "why" behind each decision to preserve reasoning for future reference.*
-
-### Questions
-*List unresolved questions that need clarification - PROVIDE CONTEXT. Include background information and why each question matters for implementation success.*
+*Record key discoveries, decisions, and findings during investigation - BE DETAILED. Include specific technical details, version numbers, performance metrics, constraints discovered through testing or conversation. Document architectural decisions with rationale and alternatives considered. List any unresolved questions that need clarification. This preserves context that may be lost due to token limits.*
 
 ---
 
 **Status**: ⚠️ Investigation in progress
 **Next Step**: Complete all checklist items, then run `/plan [feature-name]`
 ```
+
+## Final Verification Before Status Update
+
+**CRITICAL**: Before marking investigation as completed, perform these verification steps:
+
+1. **Checklist Audit**: Read through ALL checklist items line by line
+2. **Unchecked Items Check**: Search for `- [ ]` patterns in the file using grep or manual scan
+3. **Status Logic**: Only mark completed if ZERO unchecked items exist
+4. **Double Confirmation**: Re-read investigation notes to ensure completeness
+5. **Verification Command**: Run `grep '\- \[ \]' "[filename]"` to confirm no unchecked items
+
+**If ANY unchecked items remain**: Keep status as "⚠️ Investigation in progress"
 
 ## Key Principles
 
@@ -105,6 +110,7 @@ Guide user through checklist completion:
 - **Comprehensive Coverage**: All technical aspects must be explored
 - **Documentation Focus**: Record findings for future reference
 - **Blocking Mechanism**: `/plan` command checks for completed pre-plan
+- **Strict Verification**: Never mark complete without 100% verification
 
 ## Integration with Planning
 

@@ -23,9 +23,14 @@ Creates detailed implementation plans from completed pre-plan investigations.
 ## Command Execution Steps
 
 1. **Find Specific Pre-Plan**: Look for `todos/[feature-name]-pre-plan.md` file
-2. **Verify Completion**: Ensure all checklist items are marked `[x]` in pre-plan file
-3. **Create Plan Document**: Generate `todos/[feature-name].md` using template below
-4. **Populate Content**: Use pre-plan investigation findings to fill plan sections
+2. **STRICT Completion Verification**: 
+   - Search file for `- [ ]` patterns using grep or manual scan
+   - If ANY unchecked items found → STOP, return error message
+   - Verify status shows "✅ Investigation completed" 
+   - Only proceed if 100% verified complete
+3. **Verification Command**: Run `grep '\- \[ \]' "todos/[feature-name]-pre-plan.md"` to confirm zero results
+4. **Create Plan Document**: Generate `todos/[feature-name].md` using template below ONLY after verification passes
+5. **Populate Content**: Use pre-plan investigation findings to fill plan sections
 
 ## Plan Creation Workflow
 
@@ -100,85 +105,54 @@ Creates detailed implementation plans from completed pre-plan investigations.
 ## Commands Reference
 *Document complex commands (not basic ones like npm test)*
 
+### Category Name
+*Command description*
+command here
+
 ## Implementation Notes
 *Record discoveries, decisions, and important findings during implementation - BE COMPREHENSIVE. Include specific technical details, code snippets, command outputs, error messages, and solutions. Document the complete context to preserve knowledge across sessions and token limits.*
 
+### YYYY-MM-DD - Topic Name
+*Record implementation discoveries, decisions, and important findings here*
+
+**Remember**: Comprehensive plan documentation during implementation saves multiples of that time in future development and maintenance.
+
 ---
 
-# 📖 PLAN DOCUMENT OPERATION GUIDE
+## 📖 PLAN DOCUMENT OPERATION GUIDE
 
-## Progress Tracking
+### Progress Tracking
 **Update Plan Documents:**
-- Update checkbox `[ ]` → `[x]` when completing tasks
+- Update checkbox [ ] → [x] when completing tasks
 - Mark TodoWrite tasks as "completed" immediately
 - Record discoveries and changes in Implementation Notes
 
-**Example:**
+### Plan Updates During Implementation
+**Plans can evolve during implementation:**
+- Add new tasks when requirements change
+- Update phases when better patterns are discovered
+- Modify scope based on user feedback or technical discoveries
 
-### Phase 1: Database Setup
-- [x] Create migration file
-- [x] Test migration up/down
-- [ ] Add indexes (pending: performance analysis needed)
-
-## TDD Implementation
+### TDD Implementation
 Follow @docs/methodology.md for Red-Green-Refactor cycles:
 - 🔴 **RED**: Write failing test
 - 🟢 **GREEN**: Make test pass  
 - 🔵 **REFACTOR**: Improve code quality
 
-(Note: 🔴🟢🔵 appear in terminal during implementation, not in plan documents)
+Note: 🔴🟢🔵 appear in terminal during implementation, not in plan documents
 
-## Plan Updates During Implementation
-Update plan documents when:
-- User requests additional features
-- Implementation reveals new requirements
-- Better architecture patterns are discovered
+---
 
-Simply add new tasks to existing phases:
-
-### Phase 1: User Profile
-- [x] Basic profile page
-- [ ] Profile validation (added during implementation)
-- [ ] Image upload (new requirement)
-
-## Implementation Notes Format
-Document discoveries in plan documents - BE COMPREHENSIVE AND DETAILED:
-
-## Implementation Notes
-
-### 2025-06-28 - API Integration
-- **Discovery**: External API returns different structure than documented
-  - Expected: {user: {id, name, email}}
-  - Actual: {data: {user_id, full_name, email_address, created_at}}
-  - API version: v2.1.3, affects all user endpoints
-- **Root Cause**: Documentation outdated, confirmed via support ticket #12345
-- **Solution**: Added transformation layer in src/utils/api-transform.js
-  - Maps field names: user_id → id, full_name → name, etc.
-  - Handles both old and new formats for backward compatibility
-- **Testing**: npm run test:api -- --verbose shows all 47 test cases passing
-- **Performance**: Transformation adds ~2ms overhead, acceptable for non-critical path
-
-## Commands Reference Format
-Include complex commands in plan documents:
-
-## Commands Reference
-
-### Testing
-# Run filtered tests
-npm run test --filter="{auth|payment}"
-
-### Database  
-# Migration with specific env
-npm run migrate:up --env=development
-
-Don't document basic commands like `npm test` or `git commit`.
-
-**Remember**: Comprehensive plan documentation during implementation saves multiples of that time in future development and maintenance.
+**Status**: 📋 Ready for implementation
+**Next Step**: Begin implementation using TDD methodology and update progress in this document
 ```
+
 
 ## Key Principles
 
 - **Pre-Plan Required**: Must have completed `[feature-name]-pre-plan.md` before planning
+- **Strict Verification**: Never trust status alone - verify actual checkbox states
 - **Investigation-Based**: Uses investigation findings to create implementation design
 - **Template-Driven**: Ensures consistency across all plan documents
 - **Implementation-Ready**: Creates actionable tasks for development
+- **Fail-Safe**: Stop immediately when verification fails
