@@ -22,15 +22,15 @@ Creates detailed implementation plans from completed pre-plan investigations.
 
 ## Command Execution Steps
 
-1. **Find Specific Pre-Plan**: Look for `plans/[feature-name]-pre-plan.md` file
-2. **STRICT Completion Verification**: 
+1. 🔍 **Find Specific Pre-Plan**: Look for `plans/[feature-name]-pre-plan.md` file
+2. ✅ **STRICT Completion Verification**: 
    - Search file for `- [ ]` patterns using grep or manual scan
    - If ANY unchecked items found → STOP, return error message
    - Verify status shows "✅ Investigation completed" 
    - Only proceed if 100% verified complete
-3. **Verification Command**: Run `grep '\- \[ \]' "plans/[feature-name]-pre-plan.md"` to confirm zero results
-4. **Create Plan Document**: Generate `plans/[feature-name].md` using template below ONLY after verification passes
-5. **Populate Content**: Use pre-plan investigation findings to fill plan sections
+3. 🔎 **Verification Command**: Run `grep '\- \[ \]' "plans/[feature-name]-pre-plan.md"` to confirm zero results
+4. 📝 **Create Plan Document**: Generate `plans/[feature-name].md` using template below ONLY after verification passes
+5. 📋 **Populate Content**: Use pre-plan investigation findings to fill plan sections
 
 ## Plan Creation Workflow
 
@@ -44,17 +44,34 @@ Creates detailed implementation plans from completed pre-plan investigations.
 ```markdown
 # [Feature Name] - Implementation Plan
 
-## Requirements Summary
+## 🔍 Plan Document Verification
+
+**CRITICAL**: Before marking plan as ready for implementation, verify all sections are present:
+
+- [ ] **📄 Requirements Summary**: Clear requirements with checkboxes
+- [ ] **🏗️ Architecture Impact**: Components, integration points, dependencies documented
+- [ ] **📁 File Changes**: Both Modified Files and New Files sections populated
+- [ ] **🧪 Testing Strategy**: TDD test cases with inputs and expected outputs
+- [ ] **📋 Implementation Plan**: Phase structure with actionable tasks
+- [ ] **⚠️ Risk Assessment**: Technical risks and mitigation strategies
+- [ ] **📚 Reference Documentation**: Methodology and design guideline references
+- [ ] **⌨️ Commands Reference**: Complex commands documented (not basic ones)
+- [ ] **📝 Implementation Notes**: Date-based sections for recording discoveries
+- [ ] **📖 PLAN DOCUMENT OPERATION GUIDE**: Complete operational guide included
+
+---
+
+## 📄 Requirements Summary
 - [ ] Feature requirement 1
 - [ ] Feature requirement 2
 - [ ] Feature requirement 3
 
-## Architecture Impact
+## 🏗️ Architecture Impact
 - **Affected Components**: List of components that will be modified
 - **Integration Points**: How this feature connects with existing systems
 - **Dependencies**: External libraries, APIs, or services required
 
-## File Changes
+## 📁 File Changes
 
 ### Modified Files
 - `src/component1.js` - Add new functionality
@@ -65,7 +82,7 @@ Creates detailed implementation plans from completed pre-plan investigations.
 - `src/features/new-feature.js` - Core implementation
 - `src/features/new-feature.test.js` - Test suite
 
-## Testing Strategy
+## 🧪 Testing Strategy
 ### Test Cases (TDD)
 1. **Basic functionality test**
    - Input: [specific input]
@@ -75,7 +92,7 @@ Creates detailed implementation plans from completed pre-plan investigations.
    - Input: [edge case input]
    - Expected: [expected behavior]
 
-## Implementation Plan
+## 📋 Implementation Plan
 
 ### Phase A: [Descriptive Phase Name]
 - [ ] **A.1** [Task description]
@@ -93,23 +110,23 @@ Creates detailed implementation plans from completed pre-plan investigations.
   - [ ] Integration steps
   - [ ] Testing
 
-## Risk Assessment
+## ⚠️ Risk Assessment
 - **Technical Risks**: Potential technical challenges
 - **Dependencies**: External dependency risks
 - **Mitigation**: Strategies to address identified risks
 
-## Reference Documentation
+## 📚 Reference Documentation
 - **Development Methodology**: @docs/methodology.md (TDD, refactoring principles)
 - **Database Design**: @docs/database-design.md (schema design, migration guidelines)
 
-## Commands Reference
+## ⌨️ Commands Reference
 *Document complex commands (not basic ones like npm test)*
 
 ### Category Name
 *Command description*
 command here
 
-## Implementation Notes
+## 📝 Implementation Notes
 *Record discoveries, decisions, and important findings during implementation - BE COMPREHENSIVE. Include specific technical details, code snippets, command outputs, error messages, and solutions. Document the complete context to preserve knowledge across sessions and token limits.*
 
 ### YYYY-MM-DD - Topic Name
@@ -143,10 +160,9 @@ Note: 🔴🟢🔵 appear in terminal during implementation, not in plan documen
 
 ---
 
-**Status**: 📋 Ready for implementation
-**Next Step**: Begin implementation using TDD methodology and update progress in this document
+**Status**: ⚠️ Plan verification required  
+**Next Step**: Run `/plan-verify [feature-name]` to verify plan quality
 ```
-
 
 ## Key Principles
 
