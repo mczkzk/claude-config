@@ -133,6 +133,7 @@ Before marking ANY implementation task complete:
 ## 📚 Reference Documentation
 - **Development Methodology**: @docs/methodology.md (TDD, refactoring principles)
 - **Database Design**: @docs/database-design.md (schema design, migration guidelines)
+- **Production Safety**: @docs/production-safety.md (environment safety protocol, incident prevention)
 
 ## ⌨️ Commands Reference
 

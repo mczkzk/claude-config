@@ -10,6 +10,7 @@ This repository manages user configuration and documentation for Claude Code.
   - `commands.md` - Command execution guidelines
   - `continuous-learning.md` - Continuous learning & documentation guidelines
   - `database-design.md` - Database design and migration management guidelines
+  - `production-safety.md` - Production environment safety protocol and incident prevention
   - `date.md` - Date management standards for documentation
   - `methodology.md` - Programming methodology standards (TDD, refactoring)
   - `plan-document.md` - Plan document format and progress tracking standards
