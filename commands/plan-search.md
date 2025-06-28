@@ -11,7 +11,7 @@ allowed-tools:
 
 # Plan Search Command
 
-Creates investigation checklist and gathers requirements before implementation planning.
+Creates investigation checklist and gathers requirements before plan document creation.
 
 ## Usage
 
@@ -138,4 +138,4 @@ Before marking ANY item complete:
 - `/plan-exec [feature-name]` requires completed `[feature-name]-search.md`
 - All checklist items must be marked `[x]` 
 - Investigation findings inform detailed planning
-- Plan-search serves as foundation for implementation design
+- Plan-search serves as foundation for plan document

@@ -1,5 +1,5 @@
 ---
-description: Create implementation plan for structured development
+description: Create plan document for structured development
 allowed-tools:
   - Task
   - Read
@@ -11,16 +11,16 @@ allowed-tools:
 
 # Plan Execution Command
 
-Creates detailed implementation plans from completed plan-search investigations.
+Creates detailed plan documents from completed plan-search investigations.
 
 ## Usage
 
 ```
 /plan-exec [feature-name]
-# Creates implementation plan for specific feature (requires completed plan-search)
+# Creates plan document for specific feature (requires completed plan-search)
 
 /plan-exec
-# Creates implementation plan when feature-name is contextually obvious
+# Creates plan document when feature-name is contextually obvious
 ```
 
 ## Command Execution Steps
@@ -183,7 +183,7 @@ Note: 🔴🟢🔵 appear in terminal during implementation, not in plan documen
 
 - **Plan Search Required**: Must have completed `[feature-name]-search.md` before planning
 - **Strict Verification**: Never trust status alone - verify actual checkbox states
-- **Investigation-Based**: Uses investigation findings to create implementation design
+- **Investigation-Based**: Uses investigation findings to create plan document
 - **Template-Driven**: Ensures consistency across all plan documents
 - **Implementation-Ready**: Creates actionable tasks for development
 - **Fail-Safe**: Stop immediately when verification fails

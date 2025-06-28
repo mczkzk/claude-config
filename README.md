@@ -16,7 +16,7 @@ This repository manages user configuration and documentation for Claude Code.
 - `commands/` - Custom command definitions
   - [`commit.md`](commands/commit.md) - Git commit creation command
   - [`plan-search.md`](commands/plan-search.md) - Investigation and requirements gathering command
-  - [`plan-exec.md`](commands/plan-exec.md) - Implementation plan creation command
+  - [`plan-exec.md`](commands/plan-exec.md) - Plan document creation command
   - [`plan-verify.md`](commands/plan-verify.md) - Plan verification and quality assurance command
 - [`settings.json`](settings.json) - Claude Code configuration file
 
@@ -33,7 +33,7 @@ For larger implementations, use this structured approach:
 
 ### 2. Plan Creation | Normal Mode  
 - Run `/plan-exec [feature-name]` (requires completed plan-search)
-- Creates detailed implementation design document
+- Creates detailed plan document
 - Document includes: API design, data structures, component architecture, test strategy
 
 ### 3. Plan Verification | Normal Mode
@@ -42,16 +42,16 @@ For larger implementations, use this structured approach:
 - Quality assurance before implementation begins
 
 ### 4. Implementation | Auto-accept Mode
-- Use natural language: "go", "この計画を実装して", or specify plan file
+- Use natural language: "go", "この計画を実装して", or specify plan document
 - Auto-accept mode enables rapid, uninterrupted development cycles
 
 ### 5. Archive
-- Move completed, paused, or shelved plan files to `plans/archive/` directory
+- Move completed, paused, or shelved plan documents to `plans/archive/` directory
 - Keeps active workspace clean while preserving work for reference
 
 ### Context Recovery
 When context is lost during development:
-- Reference the implementation design document
+- Reference the plan document
 - Re-paste screenshots if needed
 - Ensure all requirements are still captured
 
