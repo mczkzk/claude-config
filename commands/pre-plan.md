@@ -23,7 +23,7 @@ Creates investigation checklist and gathers requirements before implementation p
 ## Command Flow
 
 ### 1. Create Investigation File
-- Generate `todos/[feature-name]-pre-plan.md`
+- Generate `plans/[feature-name]-pre-plan.md`
 - Include comprehensive investigation checklist
 - All items must be completed before `/plan` command
 

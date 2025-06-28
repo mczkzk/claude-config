@@ -11,8 +11,8 @@ This repository manages user configuration and documentation for Claude Code.
   - `continuous-learning.md` - Continuous learning & documentation guidelines
   - `database-design.md` - Database design and migration management guidelines
   - `date.md` - Date management standards for documentation
-  - `plan-document.md` - Plan document format and progress tracking standards
   - `methodology.md` - Programming methodology standards (TDD, refactoring)
+  - `plan-document.md` - Plan document format and progress tracking standards
 - `commands/` - Custom command definitions
   - `commit.md` - Git commit creation command
   - `plan.md` - Implementation plan creation command
@@ -28,6 +28,7 @@ For larger implementations, use this structured approach:
 - System prompts for specifications, screenshots, requirements
 - Complete all investigation items through interactive conversation
 - Thorough codebase, database, and dependency analysis
+- **Tip**: Save screenshots in `plans/` directory for easy reference during pre-plan phase
 
 ### 2. Design Documentation | Normal Mode  
 - Run `/plan [feature-name]` (requires completed pre-plan)

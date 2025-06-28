@@ -22,14 +22,14 @@ Creates detailed implementation plans from completed pre-plan investigations.
 
 ## Command Execution Steps
 
-1. **Find Specific Pre-Plan**: Look for `todos/[feature-name]-pre-plan.md` file
+1. **Find Specific Pre-Plan**: Look for `plans/[feature-name]-pre-plan.md` file
 2. **STRICT Completion Verification**: 
    - Search file for `- [ ]` patterns using grep or manual scan
    - If ANY unchecked items found → STOP, return error message
    - Verify status shows "✅ Investigation completed" 
    - Only proceed if 100% verified complete
-3. **Verification Command**: Run `grep '\- \[ \]' "todos/[feature-name]-pre-plan.md"` to confirm zero results
-4. **Create Plan Document**: Generate `todos/[feature-name].md` using template below ONLY after verification passes
+3. **Verification Command**: Run `grep '\- \[ \]' "plans/[feature-name]-pre-plan.md"` to confirm zero results
+4. **Create Plan Document**: Generate `plans/[feature-name].md` using template below ONLY after verification passes
 5. **Populate Content**: Use pre-plan investigation findings to fill plan sections
 
 ## Plan Creation Workflow
