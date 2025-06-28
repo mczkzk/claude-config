@@ -46,6 +46,16 @@ Guide user through checklist completion:
 ```markdown
 # Plan Search Investigation - [Feature Name]
 
+**STRICT VERIFICATION PROTOCOL**:
+
+Before marking ANY item complete:
+- [ ] Evidence documented in Investigation Notes with specific details
+- [ ] Can answer "How do you know this is true?" for this item
+- [ ] Investigation Notes contain file paths, code examples, or test results
+- [ ] Next person reading notes can verify your conclusion
+
+**Rule: If Investigation Notes don't prove the check, uncheck the box**
+
 ## 📋 Requirements Gathering
 - [ ] **Specifications provided**: Technical requirements documented
 - [ ] **UI/UX materials**: Screenshots, mockups, design references shared
