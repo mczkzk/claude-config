@@ -53,33 +53,44 @@ Guide user through checklist completion:
 - [ ] **Constraints identified**: Technical, business, or timeline limitations
 - [ ] **Success criteria defined**: Clear definition of completion
 
-## 🔍 Codebase Analysis  
-- [ ] **Similar features identified**: Existing patterns and implementations found
+## 🔍 Codebase Analysis
+- [ ] **Entry points & impact scope**: Classes/modules where changes start, sync/async downstream impacts mapped
+- [ ] **Similar features identified**: Existing patterns and implementations found for reference
 - [ ] **Reusable components**: Available components and utilities documented
-- [ ] **Code conventions**: Naming patterns and architecture styles understood
-- [ ] **Integration points**: How feature connects with existing system
+- [ ] **Code conventions aligned**: Naming patterns and architecture styles understood
+- [ ] **Integration points mapped**: How feature connects with existing system architecture
 
 ## 🗄️ Database Investigation
 - [ ] **Current schema mapped**: Existing tables, columns, relationships, and constraints documented
 - [ ] **Data patterns sampled**: Actual data examined to understand structure and volume
-- [ ] **Similar features analyzed**: How existing features handle data storage and relationships
 - [ ] **Domain rules identified**: Business constraints and validation requirements documented
 - [ ] **External data verified**: Third-party API responses logged and data structures confirmed
-- [ ] **Migration approach planned**: Backward compatibility, rollback strategy, and deployment approach defined
-- [ ] **Performance considerations**: Index requirements and query patterns evaluated
+- [ ] **Migration strategy planned**: Forward/backward compatibility, rollback approach, performance impact
 - [ ] **Anti-patterns avoided**: No assumptions without verification, no copy-paste patterns without analysis
 
 ## 🔗 External Dependencies
 - [ ] **APIs validated**: Third-party service responses verified with real data
 - [ ] **Package compatibility**: Library versions and capabilities confirmed
 - [ ] **Integration testing**: External service behavior documented
-- [ ] **Error handling**: Failure scenarios and fallbacks identified
+- [ ] **Error handling defined**: Failure scenarios and fallbacks identified
+
+## 🧪 Test & Quality Strategy
+- [ ] **Performance baselines**: Current latency & memory usage recorded
+- [ ] **Coverage gaps identified**: Critical paths and testing requirements mapped
+- [ ] **Regression protection**: Snapshot/golden tests for current behavior
+- [ ] **Integration scenarios**: Happy/unhappy path test cases outlined
+
+## 🚀 Deployment Strategy
+- [ ] **Zero-downtime deployment**: Compatible release sequencing and migration approach planned
+- [ ] **Feature toggle strategy**: Rollout/rollback without redeploy designed
+- [ ] **Rollback plan**: Recovery procedures and data safety measures defined
+- [ ] **Release verification**: Smoke tests and canary monitoring approach outlined
 
 ## ⚡ Technical Validation
+- [ ] **Configuration surface**: Flags, env vars, build-time options enumerated
 - [ ] **Performance requirements**: Load, speed, and scalability needs defined
 - [ ] **Security considerations**: Authentication, authorization, data protection
-- [ ] **Testing strategy**: Unit, integration, and end-to-end test approach
-- [ ] **Deployment approach**: How feature will be released and monitored
+- [ ] **Monitoring & observability**: How feature will be observed, logged, and alerted in production
 
 ## 📝 Investigation Notes
 
