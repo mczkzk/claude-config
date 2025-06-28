@@ -135,7 +135,6 @@ Before marking ANY implementation task complete:
 - **Database Design**: @docs/database-design.md (schema design, migration guidelines)
 
 ## ⌨️ Commands Reference
-*Document complex commands (not basic ones like npm test)*
 
 ### Category Name
 *Command description*

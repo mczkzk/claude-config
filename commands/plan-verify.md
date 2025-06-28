@@ -84,7 +84,7 @@ Verifies plan document completeness and quality.
 - **Guide**: Add missing documentation references
 
 ### ⌨️ Commands Reference
-- **Check**: Are complex commands documented?
+- **Check**: Are commands documented?
 - **Verify**: Are command descriptions clear?
 - **Guide**: Help document project-specific commands
 

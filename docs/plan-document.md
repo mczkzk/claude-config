@@ -62,7 +62,7 @@ Document discoveries in plan documents - BE COMPREHENSIVE AND DETAILED:
 ```
 
 ### Commands Reference Format
-Include complex commands in plan documents:
+Include commands in plan documents:
 
 ```markdown
 ## Commands Reference
@@ -75,8 +75,6 @@ npm run test --filter="{auth|payment}"
 # Migration with specific env
 npm run migrate:up --env=development
 ```
-
-Don't document basic commands like `npm test` or `git commit`.
 
 ---
 
