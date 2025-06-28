@@ -11,7 +11,7 @@ This repository manages user configuration and documentation for Claude Code.
   - `continuous-learning.md` - Continuous learning & documentation guidelines
   - `database-design.md` - Database design and migration management guidelines
   - `date.md` - Date management standards for documentation
-  - `plan-document-standards.md` - Plan document format and progress tracking standards
+  - `plan-document.md` - Plan document format and progress tracking standards
   - `methodology.md` - Programming methodology standards (TDD, refactoring)
 - `commands/` - Custom command definitions
   - `commit.md` - Git commit creation command
