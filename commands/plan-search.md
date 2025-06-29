@@ -56,6 +56,12 @@ Before marking ANY item complete:
 
 **Rule: If Investigation Notes don't prove the check, uncheck the box**
 
+**INCREMENTAL COMPLETION PROTOCOL**:
+✓ Mark tasks complete ONE AT A TIME as you finish each investigation item
+✓ Update checkboxes [ ] → [x] immediately when task is verified complete
+✓ Do NOT batch multiple completions - check boxes individually upon completion
+✓ Record findings in Investigation Notes before marking checkbox complete
+
 ## 📋 Requirements Gathering
 - [ ] **Specifications provided**: Technical requirements documented
 - [ ] **UI/UX materials**: Screenshots, mockups, design references shared
@@ -103,8 +109,9 @@ Before marking ANY item complete:
 - [ ] **Monitoring & observability**: How feature will be observed, logged, and alerted in production
 
 ## 📝 Investigation Notes
+Record key discoveries, decisions, and findings during investigation - BE DETAILED. Include specific technical details, version numbers, performance metrics, constraints discovered through testing or conversation. Document architectural decisions with rationale and alternatives considered. List any unresolved questions that need clarification. This preserves context that may be lost due to token limits.
 
-*Record key discoveries, decisions, and findings during investigation - BE DETAILED. Include specific technical details, version numbers, performance metrics, constraints discovered through testing or conversation. Document architectural decisions with rationale and alternatives considered. List any unresolved questions that need clarification. This preserves context that may be lost due to token limits.*
+*Record here*
 
 ---
 

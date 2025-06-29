@@ -76,6 +76,12 @@ Before marking ANY implementation task complete:
 
 **Rule: If Implementation Notes don't prove the task completion, uncheck the box**
 
+**INCREMENTAL COMPLETION PROTOCOL**:
+✓ Mark tasks complete ONE AT A TIME as you finish each implementation step
+✓ Update checkboxes [ ] → [x] immediately when task is verified complete
+✓ Do NOT batch multiple completions - check boxes individually upon completion
+✓ Record implementation evidence in Implementation Notes before marking checkbox complete
+
 ---
 
 ## 📄 Requirements Summary
@@ -147,7 +153,6 @@ Command description
 ## 📝 Implementation Notes
 Record ALL discoveries that impact development - BE COMPREHENSIVE! Include technical details, code snippets, command outputs, error solutions, performance insights, useful patterns, shortcuts, unsolved issues, failed approaches, and any knowledge that helps future implementation. Document complete context to preserve knowledge across sessions.
 
-### Topic Name
 *Record here*
 
 **Remember**: Comprehensive plan documentation during implementation saves multiples of that time in future development and maintenance.
@@ -158,9 +163,10 @@ Record ALL discoveries that impact development - BE COMPREHENSIVE! Include techn
 
 ### Progress Tracking
 **Update Plan Documents:**
-- Update checkbox [ ] → [x] when completing tasks
-- Mark TodoWrite tasks as "completed" immediately
-- Record discoveries and changes in Implementation Notes
+- Update checkbox [ ] → [x] ONE AT A TIME when completing each individual task
+- Mark TodoWrite tasks as "completed" immediately after finishing each task
+- Record discoveries and changes in Implementation Notes before checking boxes
+- Never batch multiple checkbox updates - complete tasks incrementally
 
 ### Plan Updates During Implementation
 **Plans can evolve during implementation:**
@@ -169,7 +175,7 @@ Record ALL discoveries that impact development - BE COMPREHENSIVE! Include techn
 - Modify scope based on user feedback or technical discoveries
 
 ### TDD Implementation
-Follow @docs/methodology.md for Red-Green-Refactor cycles:
+Follow @docs/development/tdd.md for Red-Green-Refactor cycles:
 - 🔴 **RED**: Write failing test
 - 🟢 **GREEN**: Make test pass  
 - 🔵 **REFACTOR**: Improve code quality
