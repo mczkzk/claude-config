@@ -36,6 +36,23 @@ Creates detailed plan documents from completed plan-search investigations.
 3. 🔎 **Verification Command**: Run `grep '\- \[ \]' "plans/[feature-name]-search.md"` to confirm zero results
 4. 📝 **Create Plan Document**: Generate `plans/[feature-name].md` using template below ONLY after verification passes
 5. 📋 **Populate Content**: Use plan-search investigation findings to fill plan sections
+6. 🔍 **MANDATORY Section Completeness Verification**: 
+   - Count sections in generated plan document
+   - MUST contain exactly 10 sections
+   - Run verification command: `grep -c "^## " "plans/[feature-name].md"`
+   - Expected result: Exactly 10 sections
+   - Verify each required section header is present:
+     * 📄 Requirements Summary
+     * 🏗️ Architecture Impact
+     * 📁 File Changes
+     * 🧪 Testing Strategy
+     * 📋 Implementation Plan
+     * ⚠️ Risk Assessment
+     * 📚 Reference Documentation
+     * ⌨️ Commands Reference
+     * 📝 Implementation Notes
+     * 📖 PLAN DOCUMENT OPERATION GUIDE
+   - If count ≠ 10 or any section missing → STOP, return error, regenerate missing sections
 
 ## Plan Creation Workflow
 
@@ -47,7 +64,7 @@ Creates detailed plan documents from completed plan-search investigations.
 ## Plan Document Template
 
 ```markdown
-# [Feature Name] - Implementation Plan
+# [Feature Name] - Development Plan
 
 **STRICT IMPLEMENTATION PROTOCOL**:
 
@@ -58,21 +75,6 @@ Before marking ANY implementation task complete:
 ✓ Next person reading notes can verify your implementation
 
 **Rule: If Implementation Notes don't prove the task completion, uncheck the box**
-
-## 🔍 Plan Document Verification
-
-**CRITICAL**: Before marking plan as ready for implementation, verify all sections are present:
-
-- [ ] **📄 Requirements Summary**: Clear requirements with checkboxes
-- [ ] **🏗️ Architecture Impact**: Components, integration points, dependencies documented
-- [ ] **📁 File Changes**: Both Modified Files and New Files sections populated
-- [ ] **🧪 Testing Strategy**: TDD test cases with inputs and expected outputs
-- [ ] **📋 Implementation Plan**: Phase structure with actionable tasks
-- [ ] **⚠️ Risk Assessment**: Technical risks and mitigation strategies
-- [ ] **📚 Reference Documentation**: Methodology and design guideline references
-- [ ] **⌨️ Commands Reference**: Complex commands documented (not basic ones)
-- [ ] **📝 Implementation Notes**: Date-based sections for recording discoveries
-- [ ] **📖 PLAN DOCUMENT OPERATION GUIDE**: Complete operational guide included
 
 ---
 
@@ -176,8 +178,8 @@ Note: 🔴🟢🔵 appear in terminal during implementation, not in plan documen
 
 ---
 
-**Status**: ⚠️ Plan verification required  
-**Next Step**: Run `/plan-verify [feature-name]` to verify plan quality
+**Status**: ✅ Ready for implementation
+**Next Step**: Begin implementation using plan document
 ```
 
 ## Key Principles
@@ -186,5 +188,7 @@ Note: 🔴🟢🔵 appear in terminal during implementation, not in plan documen
 - **Strict Verification**: Never trust status alone - verify actual checkbox states
 - **Investigation-Based**: Uses investigation findings to create plan document
 - **Template-Driven**: Ensures consistency across all plan documents
+- **Section Completeness**: Generated plan MUST contain exactly 10 template sections
+- **Automatic Verification**: Command automatically checks section count and headers
+- **Fail-Safe Regeneration**: Incomplete plans trigger error and regeneration
 - **Implementation-Ready**: Creates actionable tasks for development
-- **Fail-Safe**: Stop immediately when verification fails
