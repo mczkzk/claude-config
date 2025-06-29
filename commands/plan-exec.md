@@ -52,10 +52,10 @@ Creates detailed plan documents from completed plan-search investigations.
 **STRICT IMPLEMENTATION PROTOCOL**:
 
 Before marking ANY implementation task complete:
-- [ ] Evidence documented in Implementation Notes with specific details (code snippets, test results, file paths)
-- [ ] Can answer "How do you know this works?" for this task
-- [ ] Implementation Notes contain proof of functionality (test output, screenshots, working code)
-- [ ] Next person reading notes can verify your implementation
+✓ Evidence documented in Implementation Notes with specific details (code snippets, test results, file paths)
+✓ Can answer "How do you know this works?" for this task
+✓ Implementation Notes contain proof of functionality (test output, screenshots, working code)
+✓ Next person reading notes can verify your implementation
 
 **Rule: If Implementation Notes don't prove the task completion, uncheck the box**
 
@@ -138,14 +138,14 @@ Before marking ANY implementation task complete:
 ## ⌨️ Commands Reference
 
 ### Category Name
-*Command description*
-command here
+Command description
+*command here*
 
 ## 📝 Implementation Notes
-*Record discoveries, decisions, and important findings during implementation - BE COMPREHENSIVE. Include specific technical details, code snippets, command outputs, error messages, and solutions. Document the complete context to preserve knowledge across sessions and token limits.*
+Record ALL discoveries that impact development - BE COMPREHENSIVE! Include technical details, code snippets, command outputs, error solutions, performance insights, useful patterns, shortcuts, unsolved issues, failed approaches, and any knowledge that helps future implementation. Document complete context to preserve knowledge across sessions.
 
-### YYYY-MM-DD - Topic Name
-*Record implementation discoveries, decisions, and important findings here*
+### Topic Name
+*Record here*
 
 **Remember**: Comprehensive plan documentation during implementation saves multiples of that time in future development and maintenance.
 

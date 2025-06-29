@@ -46,7 +46,7 @@ For larger implementations, use this structured approach:
 - Auto-accept mode enables rapid, uninterrupted development cycles
 
 ### 5. Archive
-- Move completed, paused, or shelved plan documents to `plans/archive/` directory
+- Move completed or shelved plan documents to `plans/archive/` directory
 - Keeps active workspace clean while preserving work for reference
 
 ### Context Recovery

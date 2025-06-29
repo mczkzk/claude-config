@@ -49,10 +49,10 @@ Guide user through checklist completion:
 **STRICT VERIFICATION PROTOCOL**:
 
 Before marking ANY item complete:
-- [ ] Evidence documented in Investigation Notes with specific details
-- [ ] Can answer "How do you know this is true?" for this item
-- [ ] Investigation Notes contain file paths, code examples, or test results
-- [ ] Next person reading notes can verify your conclusion
+✓ Evidence documented in Investigation Notes with specific details
+✓ Can answer "How do you know this is true?" for this item  
+✓ Investigation Notes contain file paths, code examples, or test results
+✓ Next person reading notes can verify your conclusion
 
 **Rule: If Investigation Notes don't prove the check, uncheck the box**
 
