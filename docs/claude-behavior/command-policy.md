@@ -1,13 +1,11 @@
-# Command Execution Guidelines
+# Command Execution Policy
 
-## Claude Code Tool Usage Policy
-
-### Core Principle: Keep Commands Simple
+## Core Principle: Keep Commands Simple
 Claude Code requests execution permission for complex commands that use multiple tools or perform many operations. To avoid interruptions, keep individual commands simple and focused.
 
-### Preferred Patterns
+## Preferred Patterns
 
-#### ✅ Good: Simple, Single-Purpose Commands
+### ✅ Good: Simple, Single-Purpose Commands
 ```typescript
 // Instead of using Task tool for complex multi-step investigation
 // Break into simple, direct tool calls:
@@ -22,7 +20,7 @@ Read: src/app/works/page.tsx
 Grep pattern: "useWork|fetchWork" in "**/*.{ts,tsx}"
 ```
 
-#### ❌ Avoid: Complex Multi-Tool Commands
+### ❌ Avoid: Complex Multi-Tool Commands
 ```typescript
 // This triggers permission requests:
 Task tool with long prompts asking to:
@@ -33,54 +31,54 @@ Task tool with long prompts asking to:
 - All in one command
 ```
 
-### Recommended Approach
+## Recommended Approach
 
-#### Investigation Workflow
+### Investigation Workflow
 1. **Simple Search**: Use Glob/Grep for specific patterns
 2. **Targeted Reading**: Read 1-3 specific files at a time
 3. **Incremental Analysis**: Build understanding step by step
 4. **Small Batches**: Group related simple operations
 
-#### Implementation Workflow
+### Implementation Workflow
 1. **Single File Edits**: One Edit/MultiEdit per command
 2. **Focused Tests**: Test specific functionality only
 3. **Simple Validation**: Run one command (lint, test, build)
 4. **Progressive Changes**: Make small, verifiable changes
 
-### Tool Usage Best Practices
+## Tool Usage Best Practices
 
-#### File Operations
+### File Operations
 - **Glob**: Single pattern searches
 - **Grep**: Specific pattern matching
 - **Read**: 1-3 files maximum per call
 - **Edit/MultiEdit**: Single file modifications
 
-#### Development Operations
+### Development Operations
 - **Bash**: Single commands (npm run test, not npm run test && npm run build)
 - **Multiple Bash**: Use parallel execution for independent commands
 - **TodoWrite**: Simple task lists, not complex planning
 
-#### Investigation Strategy
+### Investigation Strategy
 - Start with targeted searches using existing knowledge
 - Read key files identified from searches
 - Use multiple simple commands instead of complex Task tool requests
 - Build understanding incrementally
 
-### Command Complexity Guidelines
+## Command Complexity Guidelines
 
-#### Simple (No Permission Required)
+### Simple (No Permission Required)
 - Single file operations
 - Single pattern searches
 - Single command execution
 - Basic CRUD operations
 
-#### Complex (May Trigger Permission)
+### Complex (May Trigger Permission)
 - Multi-step investigations
 - Cross-cutting changes
 - Complex analysis requests
 - Multiple tool coordination
 
-### Exception Cases
+## Exception Cases
 When complex operations are necessary:
 - Break into smaller phases
 - Use TodoWrite to track progress

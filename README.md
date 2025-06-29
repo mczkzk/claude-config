@@ -6,13 +6,18 @@ This repository manages user configuration and documentation for Claude Code.
 
 - [`CLAUDE.md`](CLAUDE.md) - Claude Code user instruction settings
 - `docs/` - Rules and guidelines
-  - [`behavioral-control.md`](docs/behavioral-control.md) - Behavioral control guidelines (Normal mode only)
-  - [`commands.md`](docs/commands.md) - Command execution guidelines
-  - [`continuous-learning.md`](docs/continuous-learning.md) - Continuous learning & documentation guidelines
-  - [`database-design.md`](docs/database-design.md) - Database design and migration management guidelines
-  - [`production-safety.md`](docs/production-safety.md) - Production environment safety protocol and incident prevention
-  - [`date.md`](docs/date.md) - Date management standards for documentation
-  - [`methodology.md`](docs/methodology.md) - Programming methodology standards (TDD, refactoring)
+  - `claude-behavior/` - Claude Code's behavioral principles
+    - [`command-policy.md`](docs/claude-behavior/command-policy.md) - Command execution policy
+    - [`learning-suggestions.md`](docs/claude-behavior/learning-suggestions.md) - Continuous learning & documentation
+    - [`date-handling.md`](docs/claude-behavior/date-handling.md) - Date management standards
+  - `user-input/` - User input interpretation and response
+    - [`shortcuts.md`](docs/user-input/shortcuts.md) - Basic response shortcuts (y/n/u)
+    - [`investigation-keywords.md`](docs/user-input/investigation-keywords.md) - Investigation request handling
+  - `development/` - Development methodologies and technical guidelines
+    - [`tdd.md`](docs/development/tdd.md) - Test-Driven Development principles
+    - [`refactoring.md`](docs/development/refactoring.md) - Code refactoring techniques
+    - [`database-design.md`](docs/development/database-design.md) - Database design and migration guidelines
+    - [`production-safety.md`](docs/development/production-safety.md) - Production environment safety protocol
 - `commands/` - Custom command definitions
   - [`commit.md`](commands/commit.md) - Git commit creation command
   - [`plan-search.md`](commands/plan-search.md) - Investigation and requirements gathering command

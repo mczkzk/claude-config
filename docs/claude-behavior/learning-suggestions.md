@@ -1,4 +1,4 @@
-# 💡 Continuous Learning & Documentation
+# Continuous Learning & Documentation
 
 ## Proactive Knowledge Capture
 Claude Code should actively identify and document new learnings about the codebase to improve future development efficiency.

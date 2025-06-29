@@ -131,9 +131,10 @@ Before marking ANY implementation task complete:
 - **Mitigation**: Strategies to address identified risks
 
 ## 📚 Reference Documentation
-- **Development Methodology**: @docs/methodology.md (TDD, refactoring principles)
-- **Database Design**: @docs/database-design.md (schema design, migration guidelines)
-- **Production Safety**: @docs/production-safety.md (environment safety protocol, incident prevention)
+- **TDD**: @docs/development/tdd.md (Test-Driven Development principles)
+- **Refactoring**: @docs/development/refactoring.md (code improvement techniques)
+- **Database Design**: @docs/development/database-design.md (schema design, migration guidelines)
+- **Production Safety**: @docs/development/production-safety.md (environment safety protocol, incident prevention)
 
 ## ⌨️ Commands Reference
 
