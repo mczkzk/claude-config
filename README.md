@@ -21,7 +21,7 @@ This repository manages user configuration and documentation for Claude Code.
 - `commands/` - Custom command definitions
   - [`commit.md`](commands/commit.md) - Git commit creation command
   - [`plan-search.md`](commands/plan-search.md) - Investigation and requirements gathering command
-  - [`plan-exec.md`](commands/plan-exec.md) - Plan document creation command
+  - [`plan-build.md`](commands/plan-build.md) - Plan document creation command
 - [`settings.json`](settings.json) - Claude Code configuration file
 
 ## Development Workflow
@@ -36,7 +36,7 @@ For larger implementations, use this structured approach:
 - **Tip**: Save screenshots in `plans/` directory for easy reference during search phase
 
 ### 2. Plan Creation | Normal Mode  
-- Run `/plan-exec [feature-name]` (requires completed plan-search)
+- Run `/plan-build [feature-name]` (requires completed plan-search)
 - Creates detailed plan document with automatic section completeness verification
 - Document includes: API design, data structures, component architecture, test strategy
 

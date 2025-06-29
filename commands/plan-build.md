@@ -9,17 +9,17 @@ allowed-tools:
   - LS
 ---
 
-# Plan Execution Command
+# Plan Build Command
 
 Creates detailed plan documents from completed plan-search investigations.
 
 ## Usage
 
 ```
-/plan-exec [feature-name]
+/plan-build [feature-name]
 # Creates plan document for specific feature (requires completed plan-search)
 
-/plan-exec
+/plan-build
 # Creates plan document when feature-name is contextually obvious
 ```
 
