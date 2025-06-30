@@ -95,7 +95,14 @@ Before marking ANY item complete:
 - [ ] **Coverage gaps identified**: Critical paths and testing requirements mapped
 - [ ] **Regression protection**: Snapshot/golden tests for current behavior
 - [ ] **Integration scenarios**: Happy/unhappy path test cases outlined
-- [ ] **Test execution commands**: Project-specific test commands documented (TDD cycles, module tests, full test suite)
+
+## ⌨️ Project Commands
+- [ ] **Development workflow**: Server start/stop, watch, and development commands
+- [ ] **Build & deployment**: Build, compile, deploy, and release commands
+- [ ] **Code quality tools**: Lint, typecheck, format, and analysis commands
+- [ ] **Database operations**: Migration, seeding, backup, and management commands
+- [ ] **Package management**: Install, update, audit, and dependency commands
+- [ ] **Testing execution**: Unit, integration, e2e, and performance test commands
 
 ## 🚀 Deployment Strategy
 - [ ] **Zero-downtime deployment**: Compatible release sequencing and migration approach planned
