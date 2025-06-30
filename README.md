@@ -91,8 +91,8 @@ git checkout origin/main -- .gitignore
 
 The following directories contain PC-specific data and are excluded from synchronization:
 - `ide/` - IDE-related temporary files
-- `projects/` - Project history
-- `statsig/` - Statistics data
-- `todos/` - TODO history
+- `projects/` - Chat session conversation logs
+- `statsig/` - Statsig (Feature Flag) related files
+- `todos/` - Todo list storage for TodoRead/TodoWrite tools
 
 These are excluded by `.gitignore`, so they won't be affected during synchronization.
