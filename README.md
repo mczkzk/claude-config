@@ -18,6 +18,7 @@ This repository manages user configuration and documentation for Claude Code.
     - [`refactoring.md`](docs/development/refactoring.md) - Code refactoring techniques
     - [`database-design.md`](docs/development/database-design.md) - Database design and migration guidelines
     - [`production-safety.md`](docs/development/production-safety.md) - Production environment safety protocol
+    - [`api-design.md`](docs/development/api-design.md) - API design guidelines with Richardson Maturity Model
 - `commands/` - Custom command definitions
   - [`commit.md`](commands/commit.md) - Git commit creation command
   - [`plan-search.md`](commands/plan-search.md) - Investigation and requirements gathering command

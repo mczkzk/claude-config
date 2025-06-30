@@ -11,3 +11,4 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 @docs/development/refactoring.md
 @docs/development/database-design.md
 @docs/development/production-safety.md
+@docs/development/api-design.md

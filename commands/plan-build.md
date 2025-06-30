@@ -160,6 +160,7 @@ Before marking ANY implementation task complete:
 ## 📚 Reference Documentation
 - **TDD**: @docs/development/tdd.md (Test-Driven Development principles)
 - **Refactoring**: @docs/development/refactoring.md (code improvement techniques)
+- **API Design**: @docs/development/api-design.md (REST API guidelines, Richardson Maturity Model, security best practices)
 - **Database Design**: @docs/development/database-design.md (schema design, migration guidelines)
 - **Production Safety**: @docs/development/production-safety.md (environment safety protocol, incident prevention)
 
