@@ -59,6 +59,9 @@ When context is lost during development:
 ### Incident Documentation
 For individual projects, consider creating a `docs/incidents/` directory to document failures, major setbacks, and lessons learned. Add `@docs/incidents/` to your project's CLAUDE.md to help Claude Code learn from past mistakes and prevent similar issues.
 
+### Temporary Notes and Records
+Create a `notes/` folder in your project for quick notes and records from Claude Code conversations. This is useful for capturing insights, debugging information, or temporary findings that you want to preserve but aren't ready to formalize into documentation.
+
 ## How to Sync Settings on Another PC
 
 If you have an existing `~/.claude` directory, you can sync only the configuration files using the following steps:
