@@ -106,7 +106,8 @@ Before marking ANY implementation task complete:
 - `src/features/new-feature.test.js` - Test suite
 
 ## 🧪 Testing Strategy
-### Test Cases (TDD)
+
+### TDD Cycle Testing (Development Phase)
 1. **Basic functionality test**
    - Input: [specific input]
    - Expected: [expected output]
@@ -115,23 +116,41 @@ Before marking ANY implementation task complete:
    - Input: [edge case input]
    - Expected: [expected behavior]
 
+### Integration Testing Checkpoints
+- **Phase Completion**: Run broader test suite after each major phase
+- **Schema Changes**: Full test suite execution after database modifications
+- **Pre-Deployment**: Complete test suite validation before any production steps
+
+### Test Execution Strategy
+- **TDD Cycles**: Focused tests for current development
+- **Phase Checkpoints**: Related module/component testing
+- **Full Validation**: Complete test suite execution
+
 ## 📋 Implementation Plan
 
 ### Phase A: [Descriptive Phase Name]
 - [ ] **A.1** [Task description]
   - [ ] Specific subtask 1
   - [ ] Specific subtask 2
-  - [ ] Test/validation step
+  - [ ] TDD cycle validation (focused tests)
 - [ ] **A.2** [Another task]
   - [ ] Implementation details
   - [ ] Error handling
   - [ ] Unit tests
+- [ ] **A.CHECKPOINT** Phase A Integration Testing
+  - [ ] Run related module/component test suite
+  - [ ] Verify no regression in connected components
+  - [ ] Document any test failures and fixes
 
 ### Phase B: [Another Phase Name]  
 - [ ] **B.1** [Task description]
   - [ ] Specific implementation
   - [ ] Integration steps
-  - [ ] Testing
+  - [ ] TDD validation
+- [ ] **B.CHECKPOINT** Full Test Suite Validation
+  - [ ] Execute complete test suite
+  - [ ] Address any failing tests from schema/integration changes
+  - [ ] Update Implementation Notes with test results
 
 ## ⚠️ Risk Assessment
 - **Technical Risks**: Potential technical challenges

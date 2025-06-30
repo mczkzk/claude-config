@@ -95,6 +95,7 @@ Before marking ANY item complete:
 - [ ] **Coverage gaps identified**: Critical paths and testing requirements mapped
 - [ ] **Regression protection**: Snapshot/golden tests for current behavior
 - [ ] **Integration scenarios**: Happy/unhappy path test cases outlined
+- [ ] **Test execution commands**: Project-specific test commands documented (TDD cycles, module tests, full test suite)
 
 ## 🚀 Deployment Strategy
 - [ ] **Zero-downtime deployment**: Compatible release sequencing and migration approach planned
