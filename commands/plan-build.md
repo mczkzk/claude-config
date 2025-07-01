@@ -28,15 +28,23 @@ Creates detailed plan documents from completed plan-search investigations.
 1. 🔍 **Find Plan Search**: 
    - If feature-name provided: Look for `plans/[feature-name]-search.md` file
    - If no feature-name: Search `plans/` directory for `*-search.md` files (excluding `archive/` subdirectory) and identify from context
+
 2. ✅ **STRICT Completion Verification**: 
    - Search file for `- [ ]` patterns using grep or manual scan
    - If ANY unchecked items found → STOP, return error message
    - Verify status shows "✅ Investigation completed" 
    - Only proceed if 100% verified complete
-3. 🔎 **Verification Command**: Run `grep '\- \[ \]' "plans/[feature-name]-search.md"` to confirm zero results
-4. 📝 **Create Plan Document**: Generate `plans/[feature-name].md` using template below ONLY after verification passes
-5. 📋 **Populate Content**: Use plan-search investigation findings to fill plan sections
-6. 🔍 **MANDATORY Section Completeness Verification**: 
+   - Run verification command: `grep '\- \[ \]' "plans/[feature-name]-search.md"` to confirm zero results
+
+3. 📚 **Development Guidelines Review**: 
+   - Re-read ALL documentation in both project `docs/development/` AND user global `~/.claude/docs/development/`
+
+4. 📝 **Create Plan Document**: 
+   - Generate `plans/[feature-name].md` using template below ONLY after verification and guidelines review complete
+   - Structure implementation in Test → Code → Refactor cycles
+   - Use plan-search investigation findings to fill plan sections
+
+5. 🔍 **MANDATORY Section Completeness Verification**: 
    - Count sections in generated plan document
    - MUST contain exactly 10 sections
    - Run verification command: `grep -c "^## " "plans/[feature-name].md"`
@@ -53,13 +61,6 @@ Creates detailed plan documents from completed plan-search investigations.
      * 📝 Implementation Notes
      * 📖 PLAN DOCUMENT OPERATION GUIDE
    - If count ≠ 10 or any section missing → STOP, return error, regenerate missing sections
-
-## Plan Creation Workflow
-
-1. **Database Design Review**: Apply @docs/database-design.md principles for schema changes
-2. **Methodology Integration**: Follow @docs/methodology.md TDD and refactoring standards
-3. **Task Breakdown**: Structure implementation in Test → Code → Refactor cycles
-4. **Plan Document Generation**: Create structured plan following template below
 
 ## Plan Document Template
 
@@ -158,11 +159,14 @@ Before marking ANY implementation task complete:
 - **Mitigation**: Strategies to address identified risks
 
 ## 📚 Reference Documentation
-- **TDD**: @docs/development/tdd.md (Test-Driven Development principles)
-- **Refactoring**: @docs/development/refactoring.md (code improvement techniques)
-- **API Design**: @docs/development/api-design.md (REST API guidelines, Richardson Maturity Model, security best practices)
-- **Database Design**: @docs/development/database-design.md (schema design, migration guidelines)
-- **Production Safety**: @docs/development/production-safety.md (environment safety protocol, incident prevention)
+
+**⚠️ CRITICAL: Re-read relevant documentation immediately when ANY uncertainty arises during implementation. Don't guess - verify with the source.**
+
+- **TDD**: ~/.claude/docs/development/tdd.md (Test-Driven Development principles)
+- **Refactoring**: ~/.claude/docs/development/refactoring.md (code improvement techniques)
+- **API Design**: ~/.claude/docs/development/api-design.md (REST API guidelines, Richardson Maturity Model, security best practices)
+- **Database Design**: ~/.claude/docs/development/database-design.md (schema design, migration guidelines)
+- **Production Safety**: ~/.claude/docs/development/production-safety.md (environment safety protocol, incident prevention)
 
 ## ⌨️ Commands Reference
 
