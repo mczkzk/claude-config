@@ -197,7 +197,7 @@ GET /api/users?sort=-created_at,name
 
 ## 🚨 Error Handling Excellence
 
-### **Standardized Error Format (RFC 7807)**
+### **Standardized Error Format (RFC 9457)**
 ```json
 {
   "type": "https://example.com/probs/validation-error",
