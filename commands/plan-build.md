@@ -36,8 +36,8 @@ Creates detailed plan documents from completed plan-search investigations.
    - Only proceed if 100% verified complete
    - Run verification command: `grep '\- \[ \]' "plans/[feature-name]-search.md"` to confirm zero results
 
-3. 📚 **Development Guidelines Review**: 
-   - Re-read ALL documentation in both project `docs/development/` AND user global `~/.claude/docs/development/`
+3. 📋 **Guidelines & Standards Review**: 
+   - Re-read CLAUDE.md and ~/.claude/CLAUDE.md for development standards and behavioral guidelines
 
 4. 📝 **Create Plan Document**: 
    - Generate `plans/[feature-name].md` using template below ONLY after verification and guidelines review complete
@@ -46,9 +46,9 @@ Creates detailed plan documents from completed plan-search investigations.
 
 5. 🔍 **MANDATORY Section Completeness Verification**: 
    - Count sections in generated plan document
-   - MUST contain exactly 10 sections
+   - MUST contain exactly 8 sections
    - Run verification command: `grep -c "^## " "plans/[feature-name].md"`
-   - Expected result: Exactly 10 sections
+   - Expected result: Exactly 8 sections
    - Verify each required section header is present:
      * 📄 Requirements Summary
      * 🏗️ Architecture Impact
@@ -56,11 +56,9 @@ Creates detailed plan documents from completed plan-search investigations.
      * 🧪 Testing Strategy
      * 📋 Implementation Plan
      * ⚠️ Risk Assessment
-     * 📚 Reference Documentation
      * ⌨️ Commands Reference
      * 📝 Implementation Notes
-     * 📖 PLAN DOCUMENT OPERATION GUIDE
-   - If count ≠ 10 or any section missing → STOP, return error, regenerate missing sections
+   - If count ≠ 8 or any section missing → STOP, return error, regenerate missing sections
 
 ## Plan Document Template
 
@@ -82,6 +80,7 @@ Before marking ANY implementation task complete:
 ✓ Update checkboxes [ ] → [x] immediately when task is verified complete
 ✓ Do NOT batch multiple completions - check boxes individually upon completion
 ✓ Record implementation evidence in Implementation Notes before marking checkbox complete
+✓ Plans can evolve during implementation - add new tasks when requirements change
 
 ---
 
@@ -158,16 +157,6 @@ Before marking ANY implementation task complete:
 - **Dependencies**: External dependency risks
 - **Mitigation**: Strategies to address identified risks
 
-## 📚 Reference Documentation
-
-**⚠️ CRITICAL: Re-read relevant documentation immediately when ANY uncertainty arises during implementation. Don't guess - verify with the source.**
-
-- **TDD**: ~/.claude/docs/development/tdd.md (Test-Driven Development principles)
-- **Refactoring**: ~/.claude/docs/development/refactoring.md (code improvement techniques)
-- **API Design**: ~/.claude/docs/development/api-design.md (REST API guidelines, Richardson Maturity Model, security best practices)
-- **Database Design**: ~/.claude/docs/development/database-design.md (schema design, migration guidelines)
-- **Production Safety**: ~/.claude/docs/development/production-safety.md (environment safety protocol, incident prevention)
-
 ## ⌨️ Commands Reference
 
 ### Category Name
@@ -183,31 +172,6 @@ Record ALL discoveries that impact development - BE COMPREHENSIVE! Include techn
 
 ---
 
-## 📖 PLAN DOCUMENT OPERATION GUIDE
-
-### Progress Tracking
-**Update Plan Documents:**
-- Update checkbox [ ] → [x] ONE AT A TIME when completing each individual task
-- Mark TodoWrite tasks as "completed" immediately after finishing each task
-- Record discoveries and changes in Implementation Notes before checking boxes
-- Never batch multiple checkbox updates - complete tasks incrementally
-
-### Plan Updates During Implementation
-**Plans can evolve during implementation:**
-- Add new tasks when requirements change
-- Update phases when better patterns are discovered
-- Modify scope based on user feedback or technical discoveries
-
-### TDD Implementation
-Follow @docs/development/tdd.md for Red-Green-Refactor cycles:
-- 🔴 **RED**: Write failing test
-- 🟢 **GREEN**: Make test pass  
-- 🔵 **REFACTOR**: Improve code quality
-
-Note: 🔴🟢🔵 appear in terminal during implementation, not in plan documents
-
----
-
 **Status**: ✅ Ready for implementation
 **Next Step**: Begin implementation using plan document
 ```
@@ -218,7 +182,7 @@ Note: 🔴🟢🔵 appear in terminal during implementation, not in plan documen
 - **Strict Verification**: Never trust status alone - verify actual checkbox states
 - **Investigation-Based**: Uses investigation findings to create plan document
 - **Template-Driven**: Ensures consistency across all plan documents
-- **Section Completeness**: Generated plan MUST contain exactly 10 template sections
+- **Section Completeness**: Generated plan MUST contain exactly 8 template sections
 - **Automatic Verification**: Command automatically checks section count and headers
 - **Fail-Safe Regeneration**: Incomplete plans trigger error and regeneration
 - **Implementation-Ready**: Creates actionable tasks for development

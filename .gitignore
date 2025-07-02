@@ -1,11 +1,11 @@
-# IDE files
+# IDE-related temporary files
 ide/
 
-# Projects data
+# Chat session conversation logs
 projects/
 
-# Statsig cache
+# Statsig (Feature Flag) related files
 statsig/
 
-# Todos
+# Todo list storage for TodoRead/TodoWrite tools
 todos/
