@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 @docs/claude-behavior/command-policy.md
 @docs/claude-behavior/learning-suggestions.md
 @docs/claude-behavior/date-handling.md
+@docs/claude-behavior/confidence-indicators.md
 @docs/user-input/shortcuts.md
 @docs/user-input/investigation-keywords.md
 @docs/development/tdd.md

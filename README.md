@@ -10,6 +10,7 @@ This repository manages user configuration and documentation for Claude Code.
     - [`command-policy.md`](docs/claude-behavior/command-policy.md) - Command execution policy
     - [`learning-suggestions.md`](docs/claude-behavior/learning-suggestions.md) - Continuous learning & documentation
     - [`date-handling.md`](docs/claude-behavior/date-handling.md) - Date management standards
+    - [`confidence-indicators.md`](docs/claude-behavior/confidence-indicators.md) - Confidence level indication system
   - `user-input/` - User input interpretation and response
     - [`shortcuts.md`](docs/user-input/shortcuts.md) - Basic response shortcuts (y/n/u)
     - [`investigation-keywords.md`](docs/user-input/investigation-keywords.md) - Investigation request handling
