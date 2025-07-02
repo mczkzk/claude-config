@@ -26,6 +26,7 @@ This repository manages user configuration and documentation for Claude Code.
   - [`plan-build.md`](commands/plan-build.md) - Plan document creation command
 - [`settings.json`](settings.json) - Claude Code configuration file
 
+
 ## Development Workflow
 
 For larger implementations, use this structured approach:
@@ -56,6 +57,7 @@ When context is lost during development:
 - Re-paste screenshots if needed
 - Ensure all requirements are still captured
 
+
 ## Project Tips
 
 ### Incident Documentation
@@ -63,6 +65,17 @@ For individual projects, consider creating a `docs/incidents/` directory to docu
 
 ### Temporary Notes and Records
 Create a `notes/` directory in your project for quick notes and records from Claude Code conversations. This is useful for capturing insights, debugging information, or temporary findings that you want to preserve but aren't ready to formalize into documentation.
+
+
+## Advanced Techniques
+
+### Documentation Re-reading Technique
+For any complex task or project, you can trade token consumption for comprehensive context by asking Claude Code to:
+```
+Re-read ALL documentation in both project `docs/` AND user global `~/.claude/docs/`
+```
+This technique loads all available guidelines and rules at conversation start, ensuring Claude Code has full context of your development standards and practices across all types of work.
+
 
 ## How to Sync Settings on Another PC
 
@@ -91,6 +104,7 @@ git checkout origin/main -- CLAUDE.md
 git checkout origin/main -- settings.json
 git checkout origin/main -- .gitignore
 ```
+
 
 ## Notes
 
