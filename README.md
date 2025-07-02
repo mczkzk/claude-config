@@ -72,7 +72,7 @@ Create a `notes/` directory in your project for quick notes and records from Cla
 ### Documentation Re-reading Technique
 For any complex task or project, you can trade token consumption for comprehensive context by asking Claude Code to:
 ```
-Re-read ALL documentation in both project `docs/` AND user global `~/.claude/docs/`
+Re-read ALL documentation: project CLAUDE.md, project docs/, ~/.claude/CLAUDE.md, and ~/.claude/docs/
 ```
 This technique loads all available guidelines and rules at conversation start, ensuring Claude Code has full context of your development standards and practices across all types of work.
 
