@@ -1,15 +1,15 @@
 # Claude Code User Configuration
 
-This repository manages user configuration and documentation for Claude Code.
+This repository manages user configuration and documentation for AI.
 
 ## Included Files
 
-- [`CLAUDE.md`](CLAUDE.md) - Claude Code behavior and development guidelines
+- [`CLAUDE.md`](CLAUDE.md) - AI behavior and development guidelines
 - `commands/` - Custom command definitions
   - [`commit.md`](commands/commit.md) - Git commit creation command
   - [`plan-search.md`](commands/plan-search.md) - Investigation and requirements gathering command
   - [`plan-build.md`](commands/plan-build.md) - Plan document creation command
-- [`settings.json`](settings.json) - Claude Code configuration file
+- [`settings.json`](settings.json) - AI configuration file
 
 
 ## Development Workflow
@@ -46,20 +46,20 @@ When context is lost during development:
 ## Project Tips
 
 ### Incident Documentation
-For individual projects, consider creating a `docs/incidents/` directory to document failures, major setbacks, and lessons learned. Add `@docs/incidents/` to your project's CLAUDE.md to help Claude Code learn from past mistakes and prevent similar issues.
+For individual projects, consider creating a `docs/incidents/` directory to document failures, major setbacks, and lessons learned. Add `@docs/incidents/` to your project's CLAUDE.md to help AI learn from past mistakes and prevent similar issues.
 
 ### Temporary Notes and Records
-Create a `notes/` directory in your project for quick notes and records from Claude Code conversations. This is useful for capturing insights, debugging information, or temporary findings that you want to preserve but aren't ready to formalize into documentation.
+Create a `notes/` directory in your project for quick notes and records from AI conversations. This is useful for capturing insights, debugging information, or temporary findings that you want to preserve but aren't ready to formalize into documentation.
 
 
 ## Advanced Techniques
 
 ### Documentation Re-reading Technique
-For any complex task or project, you can trade token consumption for comprehensive context by asking Claude Code to:
+For any complex task or project, you can trade token consumption for comprehensive context by asking AI to:
 ```
 Re-read project CLAUDE.md and ~/.claude/CLAUDE.md
 ```
-This technique loads all available guidelines and rules at conversation start, ensuring Claude Code has full context of your development standards and practices across all types of work.
+This technique loads all available guidelines and rules at conversation start, ensuring AI has full context of your development standards and practices across all types of work.
 
 
 ## How to Sync Settings on Another PC

@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Claude Code Behavior
+## AI Behavior
 
 ### Command Policy
 
@@ -60,7 +60,7 @@ Always use correct current date in documentation. Check with `date +%Y-%m-%d` co
 **Basic Responses:**
 - `y` - YES (approve/execute)
 - `n` - NO (reject/stop)
-- `u` - undo last Claude Code action/change
+- `u` - undo last AI action/change
 
 Shortcuts are for standalone use. Use full sentences for complex instructions.
 
