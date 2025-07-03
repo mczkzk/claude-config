@@ -75,6 +75,22 @@ When receiving investigation or question requests, focus on research not impleme
 - Document findings clearly
 - Do NOT implement or edit permanently without explicit request
 
+### External Dependency Problem-Solving Guidelines
+
+When external dependencies have limitations, always design the ideal solution first.
+
+**Approach:**
+1. Document root cause and impact
+2. Define ideal API/solution with benefits
+3. Present proposal to user
+4. Only implement work-arounds if ideal is rejected
+5. Tag work-arounds as technical debt
+
+**Anti-patterns:**
+- Jumping to regex parsing or type assertions
+- Suppressing type/compile errors
+- Creating hacks without user awareness
+
 ---
 
 ## Development Guidelines
